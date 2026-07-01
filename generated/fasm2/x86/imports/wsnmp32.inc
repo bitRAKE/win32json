@@ -1,0 +1,53 @@
+; Imports for wsnmp32.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+import wsnmp32,\
+SnmpCancelMsg,'SnmpCancelMsg',\
+SnmpCleanup,'SnmpCleanup',\
+SnmpCleanupEx,'SnmpCleanupEx',\
+SnmpClose,'SnmpClose',\
+SnmpContextToStr,'SnmpContextToStr',\
+SnmpCountVbl,'SnmpCountVbl',\
+SnmpCreatePdu,'SnmpCreatePdu',\
+SnmpCreateSession,'SnmpCreateSession',\
+SnmpCreateVbl,'SnmpCreateVbl',\
+SnmpDecodeMsg,'SnmpDecodeMsg',\
+SnmpDeleteVb,'SnmpDeleteVb',\
+SnmpDuplicatePdu,'SnmpDuplicatePdu',\
+SnmpDuplicateVbl,'SnmpDuplicateVbl',\
+SnmpEncodeMsg,'SnmpEncodeMsg',\
+SnmpEntityToStr,'SnmpEntityToStr',\
+SnmpFreeContext,'SnmpFreeContext',\
+SnmpFreeDescriptor,'SnmpFreeDescriptor',\
+SnmpFreeEntity,'SnmpFreeEntity',\
+SnmpFreePdu,'SnmpFreePdu',\
+SnmpFreeVbl,'SnmpFreeVbl',\
+SnmpGetLastError,'SnmpGetLastError',\
+SnmpGetPduData,'SnmpGetPduData',\
+SnmpGetRetransmitMode,'SnmpGetRetransmitMode',\
+SnmpGetRetry,'SnmpGetRetry',\
+SnmpGetTimeout,'SnmpGetTimeout',\
+SnmpGetTranslateMode,'SnmpGetTranslateMode',\
+SnmpGetVb,'SnmpGetVb',\
+SnmpGetVendorInfo,'SnmpGetVendorInfo',\
+SnmpListen,'SnmpListen',\
+SnmpListenEx,'SnmpListenEx',\
+SnmpOidCompare,'SnmpOidCompare',\
+SnmpOidCopy,'SnmpOidCopy',\
+SnmpOidToStr,'SnmpOidToStr',\
+SnmpOpen,'SnmpOpen',\
+SnmpRecvMsg,'SnmpRecvMsg',\
+SnmpRegister,'SnmpRegister',\
+SnmpSendMsg,'SnmpSendMsg',\
+SnmpSetPduData,'SnmpSetPduData',\
+SnmpSetPort,'SnmpSetPort',\
+SnmpSetRetransmitMode,'SnmpSetRetransmitMode',\
+SnmpSetRetry,'SnmpSetRetry',\
+SnmpSetTimeout,'SnmpSetTimeout',\
+SnmpSetTranslateMode,'SnmpSetTranslateMode',\
+SnmpSetVb,'SnmpSetVb',\
+SnmpStartup,'SnmpStartup',\
+SnmpStartupEx,'SnmpStartupEx',\
+SnmpStrToContext,'SnmpStrToContext',\
+SnmpStrToEntity,'SnmpStrToEntity',\
+SnmpStrToOid,'SnmpStrToOid'

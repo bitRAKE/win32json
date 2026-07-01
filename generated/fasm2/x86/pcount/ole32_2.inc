@@ -1,0 +1,47 @@
+; Parameter counts for ole32.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+CoBuildVersion% = 0
+CoGetInterceptor% = 4
+CoGetInterceptorFromTypeInfo% = 5
+CoInstall% = 5
+CoIsOle1Class% = 1
+CoRegisterChannelHook% = 2
+CreateStdProgressIndicator% = 4
+DcomChannelSetHResult% = 3
+MonikerCommonPrefixWith% = 3
+MonikerRelativePathTo% = 4
+OleBuildVersion% = 0
+OleConvertIStorageToOLESTREAM% = 2
+OleConvertIStorageToOLESTREAMEx% = 7
+OleConvertOLESTREAMToIStorage% = 3
+OleConvertOLESTREAMToIStorageEx% = 7
+OleCreateDefaultHandler% = 4
+OleCreateEx% = 12
+OleCreateFromDataEx% = 12
+OleCreateFromFileEx% = 13
+OleCreateLink% = 7
+OleCreateLinkEx% = 12
+OleCreateLinkFromDataEx% = 12
+OleCreateLinkToFileEx% = 12
+OleDoAutoConvert% = 2
+OleGetClipboardWithEnterpriseInfo% = 5
+OleGetIconOfFile% = 2
+OleMetafilePictFromIconAndLabel% = 4
+OleNoteObjectVisible% = 2
+OleRegEnumFormatEtc% = 3
+OleSetAutoConvert% = 2
+SNB_UserFree% = 2
+SNB_UserFree64% = 2
+SNB_UserMarshal% = 3
+SNB_UserMarshal64% = 3
+SNB_UserSize% = 3
+SNB_UserSize64% = 3
+SNB_UserUnmarshal% = 3
+SNB_UserUnmarshal64% = 3
+StgConvertPropertyToVariant% = 4
+StgConvertVariantToProperty% = 7
+StgGetIFillLockBytesOnFile% = 2
+StgGetIFillLockBytesOnILockBytes% = 2
+StgOpenAsyncDocfileOnIFillLockBytes% = 4
+StgPropertyLengthAsVariant% = 4

@@ -1,0 +1,39 @@
+; Imports for DiagnosticDataQuery.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+import diagnosticdataquery,\
+DdqCancelDiagnosticRecordOperation,'DdqCancelDiagnosticRecordOperation',\
+DdqCloseSession,'DdqCloseSession',\
+DdqCreateSession,'DdqCreateSession',\
+DdqExtractDiagnosticReport,'DdqExtractDiagnosticReport',\
+DdqFreeDiagnosticRecordLocaleTags,'DdqFreeDiagnosticRecordLocaleTags',\
+DdqFreeDiagnosticRecordPage,'DdqFreeDiagnosticRecordPage',\
+DdqFreeDiagnosticRecordProducerCategories,'DdqFreeDiagnosticRecordProducerCategories',\
+DdqFreeDiagnosticRecordProducers,'DdqFreeDiagnosticRecordProducers',\
+DdqFreeDiagnosticReport,'DdqFreeDiagnosticReport',\
+DdqGetDiagnosticDataAccessLevelAllowed,'DdqGetDiagnosticDataAccessLevelAllowed',\
+DdqGetDiagnosticRecordAtIndex,'DdqGetDiagnosticRecordAtIndex',\
+DdqGetDiagnosticRecordBinaryDistribution,'DdqGetDiagnosticRecordBinaryDistribution',\
+DdqGetDiagnosticRecordCategoryAtIndex,'DdqGetDiagnosticRecordCategoryAtIndex',\
+DdqGetDiagnosticRecordCategoryCount,'DdqGetDiagnosticRecordCategoryCount',\
+DdqGetDiagnosticRecordCount,'DdqGetDiagnosticRecordCount',\
+DdqGetDiagnosticRecordLocaleTagAtIndex,'DdqGetDiagnosticRecordLocaleTagAtIndex',\
+DdqGetDiagnosticRecordLocaleTagCount,'DdqGetDiagnosticRecordLocaleTagCount',\
+DdqGetDiagnosticRecordLocaleTags,'DdqGetDiagnosticRecordLocaleTags',\
+DdqGetDiagnosticRecordPage,'DdqGetDiagnosticRecordPage',\
+DdqGetDiagnosticRecordPayload,'DdqGetDiagnosticRecordPayload',\
+DdqGetDiagnosticRecordProducerAtIndex,'DdqGetDiagnosticRecordProducerAtIndex',\
+DdqGetDiagnosticRecordProducerCategories,'DdqGetDiagnosticRecordProducerCategories',\
+DdqGetDiagnosticRecordProducerCount,'DdqGetDiagnosticRecordProducerCount',\
+DdqGetDiagnosticRecordProducers,'DdqGetDiagnosticRecordProducers',\
+DdqGetDiagnosticRecordStats,'DdqGetDiagnosticRecordStats',\
+DdqGetDiagnosticRecordSummary,'DdqGetDiagnosticRecordSummary',\
+DdqGetDiagnosticRecordTagDistribution,'DdqGetDiagnosticRecordTagDistribution',\
+DdqGetDiagnosticReport,'DdqGetDiagnosticReport',\
+DdqGetDiagnosticReportAtIndex,'DdqGetDiagnosticReportAtIndex',\
+DdqGetDiagnosticReportCount,'DdqGetDiagnosticReportCount',\
+DdqGetDiagnosticReportStoreReportCount,'DdqGetDiagnosticReportStoreReportCount',\
+DdqGetSessionAccessLevel,'DdqGetSessionAccessLevel',\
+DdqGetTranscriptConfiguration,'DdqGetTranscriptConfiguration',\
+DdqIsDiagnosticRecordSampledIn,'DdqIsDiagnosticRecordSampledIn',\
+DdqSetTranscriptConfiguration,'DdqSetTranscriptConfiguration'

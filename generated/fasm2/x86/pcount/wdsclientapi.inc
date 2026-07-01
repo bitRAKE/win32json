@@ -1,0 +1,40 @@
+; Parameter counts for WDSCLIENTAPI.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+WdsCliAuthorizeSession% = 2
+WdsCliCancelTransfer% = 1
+WdsCliClose% = 1
+WdsCliCreateSession% = 3
+WdsCliFindFirstImage% = 2
+WdsCliFindNextImage% = 1
+WdsCliFreeStringArray% = 2
+WdsCliGetDriverQueryXml% = 2
+WdsCliGetEnumerationFlags% = 2
+WdsCliGetImageArchitecture% = 2
+WdsCliGetImageDescription% = 2
+WdsCliGetImageFiles% = 3
+WdsCliGetImageGroup% = 2
+WdsCliGetImageHalName% = 2
+WdsCliGetImageHandleFromFindHandle% = 2
+WdsCliGetImageHandleFromTransferHandle% = 2
+WdsCliGetImageIndex% = 2
+WdsCliGetImageLanguage% = 2
+WdsCliGetImageLanguages% = 3
+WdsCliGetImageLastModifiedTime% = 2
+WdsCliGetImageName% = 2
+WdsCliGetImageNamespace% = 2
+WdsCliGetImageParameter% = 4
+WdsCliGetImagePath% = 2
+WdsCliGetImageSize% = 2
+WdsCliGetImageType% = 2
+WdsCliGetImageVersion% = 2
+WdsCliGetTransferSize% = 2
+WdsCliInitializeLog% = 4
+WdsCliLog% = 3
+WdsCliObtainDriverPackages% = 4
+WdsCliObtainDriverPackagesEx% = 5
+WdsCliRegisterTrace% = 1
+WdsCliSetTransferBufferSize% = 1
+WdsCliTransferFile% = 9
+WdsCliTransferImage% = 7
+WdsCliWaitForTransfer% = 1

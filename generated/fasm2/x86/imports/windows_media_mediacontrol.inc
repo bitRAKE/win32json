@@ -1,0 +1,12 @@
+; Imports for Windows.Media.MediaControl.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+import windows_media_mediacontrol,\
+CreateCaptureAudioStateMonitor,'CreateCaptureAudioStateMonitor',\
+CreateCaptureAudioStateMonitorForCategory,'CreateCaptureAudioStateMonitorForCategory',\
+CreateCaptureAudioStateMonitorForCategoryAndDeviceId,'CreateCaptureAudioStateMonitorForCategoryAndDeviceId',\
+CreateCaptureAudioStateMonitorForCategoryAndDeviceRole,'CreateCaptureAudioStateMonitorForCategoryAndDeviceRole',\
+CreateRenderAudioStateMonitor,'CreateRenderAudioStateMonitor',\
+CreateRenderAudioStateMonitorForCategory,'CreateRenderAudioStateMonitorForCategory',\
+CreateRenderAudioStateMonitorForCategoryAndDeviceId,'CreateRenderAudioStateMonitorForCategoryAndDeviceId',\
+CreateRenderAudioStateMonitorForCategoryAndDeviceRole,'CreateRenderAudioStateMonitorForCategoryAndDeviceRole'

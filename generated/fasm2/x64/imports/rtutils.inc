@@ -1,0 +1,65 @@
+; Imports for rtutils.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x64
+import rtutils,\
+LogErrorA,'LogErrorA',\
+LogErrorW,'LogErrorW',\
+LogEventA,'LogEventA',\
+LogEventW,'LogEventW',\
+MprSetupProtocolEnum,'MprSetupProtocolEnum',\
+MprSetupProtocolFree,'MprSetupProtocolFree',\
+RouterAssert,'RouterAssert',\
+RouterGetErrorStringA,'RouterGetErrorStringA',\
+RouterGetErrorStringW,'RouterGetErrorStringW',\
+RouterLogDeregisterA,'RouterLogDeregisterA',\
+RouterLogDeregisterW,'RouterLogDeregisterW',\
+RouterLogEventA,'RouterLogEventA',\
+RouterLogEventDataA,'RouterLogEventDataA',\
+RouterLogEventDataW,'RouterLogEventDataW',\
+RouterLogEventExA,'RouterLogEventExA',\
+RouterLogEventExW,'RouterLogEventExW',\
+RouterLogEventStringA,'RouterLogEventStringA',\
+RouterLogEventStringW,'RouterLogEventStringW',\
+RouterLogEventValistExA,'RouterLogEventValistExA',\
+RouterLogEventValistExW,'RouterLogEventValistExW',\
+RouterLogEventW,'RouterLogEventW',\
+RouterLogRegisterA,'RouterLogRegisterA',\
+RouterLogRegisterW,'RouterLogRegisterW',\
+TraceDeregisterA,'TraceDeregisterA',\
+TraceDeregisterExA,'TraceDeregisterExA',\
+TraceDeregisterExW,'TraceDeregisterExW',\
+TraceDeregisterW,'TraceDeregisterW',\
+TraceDumpExA,'TraceDumpExA',\
+TraceDumpExW,'TraceDumpExW',\
+TraceGetConsoleA,'TraceGetConsoleA',\
+TraceGetConsoleW,'TraceGetConsoleW',\
+TracePrintfA,'TracePrintfA',\
+TracePrintfExA,'TracePrintfExA',\
+TracePrintfExW,'TracePrintfExW',\
+TracePrintfW,'TracePrintfW',\
+TracePutsExA,'TracePutsExA',\
+TracePutsExW,'TracePutsExW',\
+TraceRegisterExA,'TraceRegisterExA',\
+TraceRegisterExW,'TraceRegisterExW',\
+TraceVprintfExA,'TraceVprintfExA',\
+TraceVprintfExW,'TraceVprintfExW'
+api \
+LogError,\
+LogEvent,\
+RouterGetErrorString,\
+RouterLogDeregister,\
+RouterLogEvent,\
+RouterLogEventData,\
+RouterLogEventEx,\
+RouterLogEventString,\
+RouterLogEventValistEx,\
+RouterLogRegister,\
+TraceDeregister,\
+TraceDeregisterEx,\
+TraceDumpEx,\
+TraceGetConsole,\
+TracePrintf,\
+TracePrintfEx,\
+TracePutsEx,\
+TraceRegisterEx,\
+TraceVprintfEx

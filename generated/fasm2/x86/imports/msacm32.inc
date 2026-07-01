@@ -1,0 +1,59 @@
+; Imports for MSACM32.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+import msacm32,\
+acmDriverAddA,'acmDriverAddA',\
+acmDriverAddW,'acmDriverAddW',\
+acmDriverClose,'acmDriverClose',\
+acmDriverDetailsA,'acmDriverDetailsA',\
+acmDriverDetailsW,'acmDriverDetailsW',\
+acmDriverEnum,'acmDriverEnum',\
+acmDriverID,'acmDriverID',\
+acmDriverMessage,'acmDriverMessage',\
+acmDriverOpen,'acmDriverOpen',\
+acmDriverPriority,'acmDriverPriority',\
+acmDriverRemove,'acmDriverRemove',\
+acmFilterChooseA,'acmFilterChooseA',\
+acmFilterChooseW,'acmFilterChooseW',\
+acmFilterDetailsA,'acmFilterDetailsA',\
+acmFilterDetailsW,'acmFilterDetailsW',\
+acmFilterEnumA,'acmFilterEnumA',\
+acmFilterEnumW,'acmFilterEnumW',\
+acmFilterTagDetailsA,'acmFilterTagDetailsA',\
+acmFilterTagDetailsW,'acmFilterTagDetailsW',\
+acmFilterTagEnumA,'acmFilterTagEnumA',\
+acmFilterTagEnumW,'acmFilterTagEnumW',\
+acmFormatChooseA,'acmFormatChooseA',\
+acmFormatChooseW,'acmFormatChooseW',\
+acmFormatDetailsA,'acmFormatDetailsA',\
+acmFormatDetailsW,'acmFormatDetailsW',\
+acmFormatEnumA,'acmFormatEnumA',\
+acmFormatEnumW,'acmFormatEnumW',\
+acmFormatSuggest,'acmFormatSuggest',\
+acmFormatTagDetailsA,'acmFormatTagDetailsA',\
+acmFormatTagDetailsW,'acmFormatTagDetailsW',\
+acmFormatTagEnumA,'acmFormatTagEnumA',\
+acmFormatTagEnumW,'acmFormatTagEnumW',\
+acmGetVersion,'acmGetVersion',\
+acmMetrics,'acmMetrics',\
+acmStreamClose,'acmStreamClose',\
+acmStreamConvert,'acmStreamConvert',\
+acmStreamMessage,'acmStreamMessage',\
+acmStreamOpen,'acmStreamOpen',\
+acmStreamPrepareHeader,'acmStreamPrepareHeader',\
+acmStreamReset,'acmStreamReset',\
+acmStreamSize,'acmStreamSize',\
+acmStreamUnprepareHeader,'acmStreamUnprepareHeader'
+api \
+acmDriverAdd,\
+acmDriverDetails,\
+acmFilterChoose,\
+acmFilterDetails,\
+acmFilterEnum,\
+acmFilterTagDetails,\
+acmFilterTagEnum,\
+acmFormatChoose,\
+acmFormatDetails,\
+acmFormatEnum,\
+acmFormatTagDetails,\
+acmFormatTagEnum

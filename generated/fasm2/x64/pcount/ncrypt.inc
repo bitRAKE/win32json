@@ -1,0 +1,42 @@
+; Parameter counts for ncrypt.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x64
+NCryptCloseProtectionDescriptor% = 1
+NCryptCreateClaim% = 8
+NCryptCreatePersistedKey% = 6
+NCryptCreateProtectionDescriptor% = 3
+NCryptDecrypt% = 8
+NCryptDeleteKey% = 2
+NCryptDeriveKey% = 7
+NCryptEncrypt% = 8
+NCryptEnumAlgorithms% = 5
+NCryptEnumKeys% = 5
+NCryptEnumStorageProviders% = 3
+NCryptExportKey% = 8
+NCryptFinalizeKey% = 2
+NCryptFreeBuffer% = 1
+NCryptFreeObject% = 1
+NCryptGetProperty% = 6
+NCryptGetProtectionDescriptorInfo% = 4
+NCryptImportKey% = 8
+NCryptIsAlgSupported% = 3
+NCryptIsKeyHandle% = 1
+NCryptKeyDerivation% = 6
+NCryptNotifyChangeKey% = 3
+NCryptOpenKey% = 5
+NCryptOpenStorageProvider% = 3
+NCryptProtectSecret% = 8
+NCryptQueryProtectionDescriptorName% = 4
+NCryptRegisterProtectionDescriptorName% = 3
+NCryptSecretAgreement% = 4
+NCryptSetProperty% = 5
+NCryptSignHash% = 8
+NCryptStreamClose% = 1
+NCryptStreamOpenToProtect% = 5
+NCryptStreamOpenToUnprotect% = 4
+NCryptStreamOpenToUnprotectEx% = 4
+NCryptStreamUpdate% = 4
+NCryptTranslateHandle% = 6
+NCryptUnprotectSecret% = 8
+NCryptVerifyClaim% = 8
+NCryptVerifySignature% = 7

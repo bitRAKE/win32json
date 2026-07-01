@@ -1,0 +1,7 @@
+; Imports for api-ms-win-gaming-expandedresources-l1-1-0.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+import api_ms_win_gaming_expandedresources_l1_1_0,\
+GetExpandedResourceExclusiveCpuCount,'GetExpandedResourceExclusiveCpuCount',\
+HasExpandedResources,'HasExpandedResources',\
+ReleaseExclusiveCpuSets,'ReleaseExclusiveCpuSets'

@@ -1,0 +1,46 @@
+; Parameter counts for HTTPAPI.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+HttpAddFragmentToCache% = 5
+HttpAddUrl% = 3
+HttpAddUrlToUrlGroup% = 4
+HttpCancelHttpRequest% = 3
+HttpCloseRequestQueue% = 1
+HttpCloseServerSession% = 1
+HttpCloseUrlGroup% = 1
+HttpCreateHttpHandle% = 2
+HttpCreateRequestQueue% = 5
+HttpCreateServerSession% = 3
+HttpCreateUrlGroup% = 3
+HttpDeclarePush% = 6
+HttpDelegateRequestEx% = 6
+HttpDeleteServiceConfiguration% = 5
+HttpFindUrlGroupId% = 3
+HttpFlushResponseCache% = 4
+HttpGetExtension% = 4
+HttpInitialize% = 3
+HttpIsFeatureSupported% = 1
+HttpPrepareUrl% = 4
+HttpQueryRequestQueueProperty% = 7
+HttpQueryServerSessionProperty% = 5
+HttpQueryServiceConfiguration% = 8
+HttpQueryUrlGroupProperty% = 5
+HttpReadFragmentFromCache% = 7
+HttpReceiveClientCertificate% = 7
+HttpReceiveHttpRequest% = 7
+HttpReceiveRequestEntityBody% = 7
+HttpRemoveUrl% = 2
+HttpRemoveUrlFromUrlGroup% = 3
+HttpSendHttpResponse% = 10
+HttpSendResponseEntityBody% = 10
+HttpSetRequestProperty% = 6
+HttpSetRequestQueueProperty% = 6
+HttpSetServerSessionProperty% = 4
+HttpSetServiceConfiguration% = 5
+HttpSetUrlGroupProperty% = 4
+HttpShutdownRequestQueue% = 1
+HttpTerminate% = 2
+HttpUpdateServiceConfiguration% = 5
+HttpWaitForDemandStart% = 2
+HttpWaitForDisconnect% = 3
+HttpWaitForDisconnectEx% = 4

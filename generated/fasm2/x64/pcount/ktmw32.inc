@@ -1,0 +1,42 @@
+; Parameter counts for ktmw32.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x64
+CommitComplete% = 2
+CommitEnlistment% = 2
+CommitTransaction% = 1
+CommitTransactionAsync% = 1
+CreateEnlistment% = 6
+CreateResourceManager% = 5
+CreateTransaction% = 7
+CreateTransactionManager% = 4
+GetCurrentClockTransactionManager% = 2
+GetEnlistmentId% = 2
+GetEnlistmentRecoveryInformation% = 4
+GetNotificationResourceManager% = 5
+GetNotificationResourceManagerAsync% = 5
+GetTransactionId% = 2
+GetTransactionInformation% = 7
+GetTransactionManagerId% = 2
+OpenEnlistment% = 3
+OpenResourceManager% = 3
+OpenTransaction% = 2
+OpenTransactionManager% = 3
+OpenTransactionManagerById% = 3
+PrepareComplete% = 2
+PrepareEnlistment% = 2
+PrePrepareComplete% = 2
+PrePrepareEnlistment% = 2
+ReadOnlyEnlistment% = 2
+RecoverEnlistment% = 2
+RecoverResourceManager% = 1
+RecoverTransactionManager% = 1
+RenameTransactionManager% = 2
+RollbackComplete% = 2
+RollbackEnlistment% = 2
+RollbackTransaction% = 1
+RollbackTransactionAsync% = 1
+RollforwardTransactionManager% = 2
+SetEnlistmentRecoveryInformation% = 3
+SetResourceManagerCompletionPort% = 3
+SetTransactionInformation% = 5
+SinglePhaseReject% = 2

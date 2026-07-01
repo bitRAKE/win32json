@@ -1,0 +1,56 @@
+; Imports for computecore.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x64
+import computecore,\
+HcsCancelOperation,'HcsCancelOperation',\
+HcsCloseComputeSystem,'HcsCloseComputeSystem',\
+HcsCloseOperation,'HcsCloseOperation',\
+HcsCloseProcess,'HcsCloseProcess',\
+HcsCrashComputeSystem,'HcsCrashComputeSystem',\
+HcsCreateComputeSystem,'HcsCreateComputeSystem',\
+HcsCreateComputeSystemInNamespace,'HcsCreateComputeSystemInNamespace',\
+HcsCreateEmptyGuestStateFile,'HcsCreateEmptyGuestStateFile',\
+HcsCreateEmptyRuntimeStateFile,'HcsCreateEmptyRuntimeStateFile',\
+HcsCreateOperation,'HcsCreateOperation',\
+HcsCreateProcess,'HcsCreateProcess',\
+HcsEnumerateComputeSystems,'HcsEnumerateComputeSystems',\
+HcsEnumerateComputeSystemsInNamespace,'HcsEnumerateComputeSystemsInNamespace',\
+HcsGetComputeSystemFromOperation,'HcsGetComputeSystemFromOperation',\
+HcsGetComputeSystemProperties,'HcsGetComputeSystemProperties',\
+HcsGetOperationContext,'HcsGetOperationContext',\
+HcsGetOperationId,'HcsGetOperationId',\
+HcsGetOperationResult,'HcsGetOperationResult',\
+HcsGetOperationResultAndProcessInfo,'HcsGetOperationResultAndProcessInfo',\
+HcsGetOperationType,'HcsGetOperationType',\
+HcsGetProcessFromOperation,'HcsGetProcessFromOperation',\
+HcsGetProcessInfo,'HcsGetProcessInfo',\
+HcsGetProcessorCompatibilityFromSavedState,'HcsGetProcessorCompatibilityFromSavedState',\
+HcsGetProcessProperties,'HcsGetProcessProperties',\
+HcsGetServiceProperties,'HcsGetServiceProperties',\
+HcsGrantVmAccess,'HcsGrantVmAccess',\
+HcsGrantVmGroupAccess,'HcsGrantVmGroupAccess',\
+HcsModifyComputeSystem,'HcsModifyComputeSystem',\
+HcsModifyProcess,'HcsModifyProcess',\
+HcsModifyServiceSettings,'HcsModifyServiceSettings',\
+HcsOpenComputeSystem,'HcsOpenComputeSystem',\
+HcsOpenComputeSystemInNamespace,'HcsOpenComputeSystemInNamespace',\
+HcsOpenProcess,'HcsOpenProcess',\
+HcsPauseComputeSystem,'HcsPauseComputeSystem',\
+HcsResumeComputeSystem,'HcsResumeComputeSystem',\
+HcsRevokeVmAccess,'HcsRevokeVmAccess',\
+HcsRevokeVmGroupAccess,'HcsRevokeVmGroupAccess',\
+HcsSaveComputeSystem,'HcsSaveComputeSystem',\
+HcsSetComputeSystemCallback,'HcsSetComputeSystemCallback',\
+HcsSetOperationCallback,'HcsSetOperationCallback',\
+HcsSetOperationContext,'HcsSetOperationContext',\
+HcsSetProcessCallback,'HcsSetProcessCallback',\
+HcsShutDownComputeSystem,'HcsShutDownComputeSystem',\
+HcsSignalProcess,'HcsSignalProcess',\
+HcsStartComputeSystem,'HcsStartComputeSystem',\
+HcsSubmitWerReport,'HcsSubmitWerReport',\
+HcsTerminateComputeSystem,'HcsTerminateComputeSystem',\
+HcsTerminateProcess,'HcsTerminateProcess',\
+HcsWaitForComputeSystemExit,'HcsWaitForComputeSystemExit',\
+HcsWaitForOperationResult,'HcsWaitForOperationResult',\
+HcsWaitForOperationResultAndProcessInfo,'HcsWaitForOperationResultAndProcessInfo',\
+HcsWaitForProcessExit,'HcsWaitForProcessExit'

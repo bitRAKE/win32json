@@ -1,0 +1,43 @@
+; Parameter counts for SensorsUtilsV2.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+CollectionsListAllocateBufferAndSerialize% = 3
+CollectionsListCopyAndMarshall% = 2
+CollectionsListDeserializeFromBuffer% = 3
+CollectionsListGetFillableCount% = 1
+CollectionsListGetMarshalledSize% = 1
+CollectionsListGetMarshalledSizeWithoutSerialization% = 1
+CollectionsListGetSerializedSize% = 1
+CollectionsListMarshall% = 1
+CollectionsListSerializeToBuffer% = 3
+CollectionsListSortSubscribedActivitiesByConfidence% = 2
+CollectionsListUpdateMarshalledPointer% = 1
+EvaluateActivityThresholds% = 3
+GetPerformanceTime% = 1
+InitPropVariantFromCLSIDArray% = 3
+InitPropVariantFromFloat% = 2
+IsCollectionListSame% = 2
+IsGUIDPresentInList% = 3
+IsKeyPresentInCollectionList% = 2
+IsKeyPresentInPropertyList% = 2
+IsSensorSubscribed% = 2
+PropertiesListCopy% = 2
+PropertiesListGetFillableCount% = 1
+PropKeyFindKeyGetBool% = 3
+PropKeyFindKeyGetDouble% = 3
+PropKeyFindKeyGetFileTime% = 3
+PropKeyFindKeyGetFloat% = 3
+PropKeyFindKeyGetGuid% = 3
+PropKeyFindKeyGetInt32% = 3
+PropKeyFindKeyGetInt64% = 3
+PropKeyFindKeyGetNthInt64% = 4
+PropKeyFindKeyGetNthUlong% = 4
+PropKeyFindKeyGetNthUshort% = 4
+PropKeyFindKeyGetPropVariant% = 4
+PropKeyFindKeyGetUlong% = 3
+PropKeyFindKeyGetUshort% = 3
+PropKeyFindKeySetPropVariant% = 4
+PropVariantGetInformation% = 5
+SensorCollectionGetAt% = 4
+SerializationBufferAllocate% = 2
+SerializationBufferFree% = 1

@@ -1,0 +1,41 @@
+; Parameter counts for UxTheme.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x64
+BeginBufferedAnimation% = 8
+BeginPanningFeedback% = 1
+BufferedPaintRenderAnimation% = 2
+BufferedPaintSetAlpha% = 3
+DrawThemeEdge% = 8
+DrawThemeIcon% = 7
+DrawThemeParentBackgroundEx% = 4
+DrawThemeText% = 9
+EnableThemeDialogTexture% = 2
+EnableTheming% = 1
+EndBufferedAnimation% = 2
+EndPanningFeedback% = 2
+GetBufferedPaintDC% = 1
+GetBufferedPaintTargetDC% = 1
+GetBufferedPaintTargetRect% = 2
+GetThemeBackgroundRegion% = 6
+GetThemeBool% = 5
+GetThemeDocumentationProperty% = 4
+GetThemeFilename% = 6
+GetThemeIntList% = 5
+GetThemePropertyOrigin% = 5
+GetThemeString% = 6
+GetThemeSysBool% = 2
+GetThemeSysColor% = 2
+GetThemeSysColorBrush% = 2
+GetThemeSysFont% = 3
+GetThemeSysInt% = 3
+GetThemeSysSize% = 2
+GetThemeSysString% = 4
+GetThemeTextExtent% = 9
+GetThemeTextMetrics% = 5
+GetThemeTransitionDuration% = 6
+HitTestThemeBackground% = 9
+IsThemeBackgroundPartiallyTransparent% = 3
+IsThemeDialogTextureEnabled% = 1
+OpenThemeDataForDpi% = 3
+SetThemeAppProperties% = 1
+UpdatePanningFeedback% = 4

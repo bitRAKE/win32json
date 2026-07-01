@@ -1,0 +1,43 @@
+; Parameter counts for USP10.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+ScriptApplyDigitSubstitution% = 3
+ScriptApplyLogicalWidth% = 9
+ScriptBreak% = 4
+ScriptCacheGetHeight% = 3
+ScriptCPtoX% = 9
+ScriptFreeCache% = 1
+ScriptGetCMap% = 6
+ScriptGetFontAlternateGlyphs% = 10
+ScriptGetFontFeatureTags% = 8
+ScriptGetFontLanguageTags% = 7
+ScriptGetFontProperties% = 3
+ScriptGetFontScriptTags% = 6
+ScriptGetGlyphABCWidth% = 4
+ScriptGetLogicalWidths% = 7
+ScriptGetProperties% = 2
+ScriptIsComplex% = 3
+ScriptItemize% = 7
+ScriptItemizeOpenType% = 8
+ScriptJustify% = 6
+ScriptLayout% = 4
+ScriptPlace% = 9
+ScriptPlaceOpenType% = 18
+ScriptPositionSingleGlyph% = 12
+ScriptRecordDigitSubstitution% = 2
+ScriptShape% = 10
+ScriptShapeOpenType% = 16
+ScriptString_pcOutChars% = 1
+ScriptString_pLogAttr% = 1
+ScriptString_pSize% = 1
+ScriptStringAnalyse% = 13
+ScriptStringCPtoX% = 4
+ScriptStringFree% = 1
+ScriptStringGetLogicalWidths% = 2
+ScriptStringGetOrder% = 2
+ScriptStringOut% = 8
+ScriptStringValidate% = 1
+ScriptStringXtoCP% = 4
+ScriptSubstituteSingleGlyph% = 9
+ScriptTextOut% = 14
+ScriptXtoCP% = 9

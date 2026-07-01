@@ -1,0 +1,19 @@
+; Imports for MDMRegistration.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x64
+import mdmregistration,\
+DiscoverManagementService,'DiscoverManagementService',\
+DiscoverManagementServiceEx,'DiscoverManagementServiceEx',\
+GetDeviceManagementConfigInfo,'GetDeviceManagementConfigInfo',\
+GetDeviceRegistrationInfo,'GetDeviceRegistrationInfo',\
+GetManagementAppHyperlink,'GetManagementAppHyperlink',\
+IsDeviceRegisteredWithManagement,'IsDeviceRegisteredWithManagement',\
+IsManagementRegistrationAllowed,'IsManagementRegistrationAllowed',\
+IsMdmUxWithoutAadAllowed,'IsMdmUxWithoutAadAllowed',\
+RegisterDeviceWithManagement,'RegisterDeviceWithManagement',\
+RegisterDeviceWithManagementUsingAADCredentials,'RegisterDeviceWithManagementUsingAADCredentials',\
+RegisterDeviceWithManagementUsingAADDeviceCredentials,'RegisterDeviceWithManagementUsingAADDeviceCredentials',\
+RegisterDeviceWithManagementUsingAADDeviceCredentials2,'RegisterDeviceWithManagementUsingAADDeviceCredentials2',\
+SetDeviceManagementConfigInfo,'SetDeviceManagementConfigInfo',\
+SetManagedExternally,'SetManagedExternally',\
+UnregisterDeviceWithManagement,'UnregisterDeviceWithManagement'

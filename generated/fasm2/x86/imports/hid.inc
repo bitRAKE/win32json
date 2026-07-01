@@ -1,0 +1,49 @@
+; Imports for HID.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+import hid,\
+HidD_FlushQueue,'HidD_FlushQueue',\
+HidD_FreePreparsedData,'HidD_FreePreparsedData',\
+HidD_GetAttributes,'HidD_GetAttributes',\
+HidD_GetConfiguration,'HidD_GetConfiguration',\
+HidD_GetFeature,'HidD_GetFeature',\
+HidD_GetHidGuid,'HidD_GetHidGuid',\
+HidD_GetIndexedString,'HidD_GetIndexedString',\
+HidD_GetInputReport,'HidD_GetInputReport',\
+HidD_GetManufacturerString,'HidD_GetManufacturerString',\
+HidD_GetMsGenreDescriptor,'HidD_GetMsGenreDescriptor',\
+HidD_GetNumInputBuffers,'HidD_GetNumInputBuffers',\
+HidD_GetPhysicalDescriptor,'HidD_GetPhysicalDescriptor',\
+HidD_GetPreparsedData,'HidD_GetPreparsedData',\
+HidD_GetProductString,'HidD_GetProductString',\
+HidD_GetSerialNumberString,'HidD_GetSerialNumberString',\
+HidD_SetConfiguration,'HidD_SetConfiguration',\
+HidD_SetFeature,'HidD_SetFeature',\
+HidD_SetNumInputBuffers,'HidD_SetNumInputBuffers',\
+HidD_SetOutputReport,'HidD_SetOutputReport',\
+HidP_GetButtonArray,'HidP_GetButtonArray',\
+HidP_GetButtonCaps,'HidP_GetButtonCaps',\
+HidP_GetCaps,'HidP_GetCaps',\
+HidP_GetData,'HidP_GetData',\
+HidP_GetExtendedAttributes,'HidP_GetExtendedAttributes',\
+HidP_GetLinkCollectionNodes,'HidP_GetLinkCollectionNodes',\
+HidP_GetScaledUsageValue,'HidP_GetScaledUsageValue',\
+HidP_GetSpecificButtonCaps,'HidP_GetSpecificButtonCaps',\
+HidP_GetSpecificValueCaps,'HidP_GetSpecificValueCaps',\
+HidP_GetUsages,'HidP_GetUsages',\
+HidP_GetUsagesEx,'HidP_GetUsagesEx',\
+HidP_GetUsageValue,'HidP_GetUsageValue',\
+HidP_GetUsageValueArray,'HidP_GetUsageValueArray',\
+HidP_GetValueCaps,'HidP_GetValueCaps',\
+HidP_InitializeReportForID,'HidP_InitializeReportForID',\
+HidP_MaxDataListLength,'HidP_MaxDataListLength',\
+HidP_MaxUsageListLength,'HidP_MaxUsageListLength',\
+HidP_SetButtonArray,'HidP_SetButtonArray',\
+HidP_SetData,'HidP_SetData',\
+HidP_SetScaledUsageValue,'HidP_SetScaledUsageValue',\
+HidP_SetUsages,'HidP_SetUsages',\
+HidP_SetUsageValue,'HidP_SetUsageValue',\
+HidP_SetUsageValueArray,'HidP_SetUsageValueArray',\
+HidP_TranslateUsagesToI8042ScanCodes,'HidP_TranslateUsagesToI8042ScanCodes',\
+HidP_UnsetUsages,'HidP_UnsetUsages',\
+HidP_UsageListDifference,'HidP_UsageListDifference'

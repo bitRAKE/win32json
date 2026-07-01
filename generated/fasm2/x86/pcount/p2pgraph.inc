@@ -1,0 +1,40 @@
+; Parameter counts for P2PGRAPH.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+PeerGraphAddRecord% = 3
+PeerGraphClose% = 1
+PeerGraphCloseDirectConnection% = 2
+PeerGraphConnect% = 4
+PeerGraphCreate% = 4
+PeerGraphDelete% = 3
+PeerGraphDeleteRecord% = 3
+PeerGraphEndEnumeration% = 1
+PeerGraphEnumConnections% = 3
+PeerGraphEnumNodes% = 3
+PeerGraphEnumRecords% = 4
+PeerGraphExportDatabase% = 2
+PeerGraphFreeData% = 1
+PeerGraphGetEventData% = 2
+PeerGraphGetItemCount% = 2
+PeerGraphGetNextItem% = 3
+PeerGraphGetNodeInfo% = 3
+PeerGraphGetProperties% = 2
+PeerGraphGetRecord% = 3
+PeerGraphGetStatus% = 2
+PeerGraphImportDatabase% = 2
+PeerGraphListen% = 4
+PeerGraphOpen% = 7
+PeerGraphOpenDirectConnection% = 4
+PeerGraphPeerTimeToUniversalTime% = 3
+PeerGraphRegisterEvent% = 5
+PeerGraphSearchRecords% = 3
+PeerGraphSendData% = 5
+PeerGraphSetNodeAttributes% = 2
+PeerGraphSetPresence% = 2
+PeerGraphSetProperties% = 2
+PeerGraphShutdown% = 0
+PeerGraphStartup% = 2
+PeerGraphUniversalTimeToPeerTime% = 3
+PeerGraphUnregisterEvent% = 1
+PeerGraphUpdateRecord% = 2
+PeerGraphValidateDeferredRecords% = 3

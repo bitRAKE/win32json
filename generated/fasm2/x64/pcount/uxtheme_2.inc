@@ -1,0 +1,42 @@
+; Parameter counts for UXTHEME.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x64
+BeginBufferedPaint% = 5
+BufferedPaintClear% = 2
+BufferedPaintInit% = 0
+BufferedPaintStopAllAnimations% = 1
+BufferedPaintUnInit% = 0
+CloseThemeData% = 1
+DrawThemeBackground% = 6
+DrawThemeBackgroundEx% = 6
+DrawThemeParentBackground% = 3
+DrawThemeTextEx% = 9
+EndBufferedPaint% = 2
+GetBufferedPaintBits% = 3
+GetCurrentThemeName% = 6
+GetThemeAnimationProperty% = 7
+GetThemeAnimationTransform% = 7
+GetThemeAppProperties% = 0
+GetThemeBackgroundContentRect% = 6
+GetThemeBackgroundExtent% = 6
+GetThemeBitmap% = 6
+GetThemeColor% = 5
+GetThemeEnumValue% = 5
+GetThemeFont% = 6
+GetThemeInt% = 5
+GetThemeMargins% = 7
+GetThemeMetric% = 6
+GetThemePartSize% = 7
+GetThemePosition% = 5
+GetThemeRect% = 5
+GetThemeStream% = 7
+GetThemeTimingFunction% = 5
+GetWindowTheme% = 1
+IsAppThemed% = 0
+IsCompositionActive% = 0
+IsThemeActive% = 0
+IsThemePartDefined% = 3
+OpenThemeData% = 2
+OpenThemeDataEx% = 3
+SetWindowTheme% = 3
+SetWindowThemeAttribute% = 4

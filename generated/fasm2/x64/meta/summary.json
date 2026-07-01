@@ -1,0 +1,32 @@
+{
+  "arch": "x64",
+  "constants": 85670,
+  "enum_values": 59563,
+  "flexible_arrays_treated_as_one": 857,
+  "functions": 17083,
+  "interface_guids": {
+    "conflicting_export_guid": 0,
+    "from_exports": 6,
+    "from_metadata": 7514,
+    "iid_constants_without_interface": 0,
+    "interfaces": 7579,
+    "missing_guid": 59,
+    "with_guid": 7520
+  },
+  "json_files": 304,
+  "property_keys": 2432,
+  "renamed_symbols": 75,
+  "string_constants": 7055,
+  "types": {
+    "Com": 7579,
+    "ComClassID": 2482,
+    "Enum": 7005,
+    "FunctionPointer": 2617,
+    "NativeTypedef": 248,
+    "Struct": 12397,
+    "Union": 1102
+  },
+  "unicode_aliases": 2491,
+  "unresolved_refs": {},
+  "uuid_constants": 5432
+}

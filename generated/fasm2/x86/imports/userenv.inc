@@ -1,0 +1,59 @@
+; Imports for USERENV.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+import userenv,\
+CreateAppContainerProfile,'CreateAppContainerProfile',\
+CreateEnvironmentBlock,'CreateEnvironmentBlock',\
+CreateProfile,'CreateProfile',\
+DeleteAppContainerProfile,'DeleteAppContainerProfile',\
+DeleteProfileA,'DeleteProfileA',\
+DeleteProfileW,'DeleteProfileW',\
+DeriveAppContainerSidFromAppContainerName,'DeriveAppContainerSidFromAppContainerName',\
+DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName,'DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName',\
+DestroyEnvironmentBlock,'DestroyEnvironmentBlock',\
+EnterCriticalPolicySection,'EnterCriticalPolicySection',\
+ExpandEnvironmentStringsForUserA,'ExpandEnvironmentStringsForUserA',\
+ExpandEnvironmentStringsForUserW,'ExpandEnvironmentStringsForUserW',\
+FreeGPOListA,'FreeGPOListA',\
+FreeGPOListW,'FreeGPOListW',\
+GenerateGPNotification,'GenerateGPNotification',\
+GetAllUsersProfileDirectoryA,'GetAllUsersProfileDirectoryA',\
+GetAllUsersProfileDirectoryW,'GetAllUsersProfileDirectoryW',\
+GetAppContainerFolderPath,'GetAppContainerFolderPath',\
+GetAppContainerRegistryLocation,'GetAppContainerRegistryLocation',\
+GetAppliedGPOListA,'GetAppliedGPOListA',\
+GetAppliedGPOListW,'GetAppliedGPOListW',\
+GetDefaultUserProfileDirectoryA,'GetDefaultUserProfileDirectoryA',\
+GetDefaultUserProfileDirectoryW,'GetDefaultUserProfileDirectoryW',\
+GetGPOListA,'GetGPOListA',\
+GetGPOListW,'GetGPOListW',\
+GetProfilesDirectoryA,'GetProfilesDirectoryA',\
+GetProfilesDirectoryW,'GetProfilesDirectoryW',\
+GetProfileType,'GetProfileType',\
+GetUserProfileDirectoryA,'GetUserProfileDirectoryA',\
+GetUserProfileDirectoryW,'GetUserProfileDirectoryW',\
+LeaveCriticalPolicySection,'LeaveCriticalPolicySection',\
+LoadUserProfileA,'LoadUserProfileA',\
+LoadUserProfileW,'LoadUserProfileW',\
+ProcessGroupPolicyCompleted,'ProcessGroupPolicyCompleted',\
+ProcessGroupPolicyCompletedEx,'ProcessGroupPolicyCompletedEx',\
+RefreshPolicy,'RefreshPolicy',\
+RefreshPolicyEx,'RefreshPolicyEx',\
+RegisterGPNotification,'RegisterGPNotification',\
+RsopAccessCheckByType,'RsopAccessCheckByType',\
+RsopFileAccessCheck,'RsopFileAccessCheck',\
+RsopResetPolicySettingStatus,'RsopResetPolicySettingStatus',\
+RsopSetPolicySettingStatus,'RsopSetPolicySettingStatus',\
+UnloadUserProfile,'UnloadUserProfile',\
+UnregisterGPNotification,'UnregisterGPNotification'
+api \
+ExpandEnvironmentStringsForUser,\
+FreeGPOList,\
+GetAppliedGPOList,\
+GetGPOList,\
+DeleteProfile,\
+GetAllUsersProfileDirectory,\
+GetDefaultUserProfileDirectory,\
+GetProfilesDirectory,\
+GetUserProfileDirectory,\
+LoadUserProfile

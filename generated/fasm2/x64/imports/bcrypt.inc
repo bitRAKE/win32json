@@ -1,0 +1,57 @@
+; Imports for bcrypt.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x64
+import bcrypt,\
+BCryptAddContextFunction,'BCryptAddContextFunction',\
+BCryptCloseAlgorithmProvider,'BCryptCloseAlgorithmProvider',\
+BCryptConfigureContext,'BCryptConfigureContext',\
+BCryptConfigureContextFunction,'BCryptConfigureContextFunction',\
+BCryptCreateContext,'BCryptCreateContext',\
+BCryptCreateHash,'BCryptCreateHash',\
+BCryptCreateMultiHash,'BCryptCreateMultiHash',\
+BCryptDecrypt,'BCryptDecrypt',\
+BCryptDeleteContext,'BCryptDeleteContext',\
+BCryptDeriveKey,'BCryptDeriveKey',\
+BCryptDeriveKeyCapi,'BCryptDeriveKeyCapi',\
+BCryptDeriveKeyPBKDF2,'BCryptDeriveKeyPBKDF2',\
+BCryptDestroyHash,'BCryptDestroyHash',\
+BCryptDestroyKey,'BCryptDestroyKey',\
+BCryptDestroySecret,'BCryptDestroySecret',\
+BCryptDuplicateHash,'BCryptDuplicateHash',\
+BCryptDuplicateKey,'BCryptDuplicateKey',\
+BCryptEncrypt,'BCryptEncrypt',\
+BCryptEnumAlgorithms,'BCryptEnumAlgorithms',\
+BCryptEnumContextFunctionProviders,'BCryptEnumContextFunctionProviders',\
+BCryptEnumContextFunctions,'BCryptEnumContextFunctions',\
+BCryptEnumContexts,'BCryptEnumContexts',\
+BCryptEnumProviders,'BCryptEnumProviders',\
+BCryptEnumRegisteredProviders,'BCryptEnumRegisteredProviders',\
+BCryptExportKey,'BCryptExportKey',\
+BCryptFinalizeKeyPair,'BCryptFinalizeKeyPair',\
+BCryptFinishHash,'BCryptFinishHash',\
+BCryptFreeBuffer,'BCryptFreeBuffer',\
+BCryptGenerateKeyPair,'BCryptGenerateKeyPair',\
+BCryptGenerateSymmetricKey,'BCryptGenerateSymmetricKey',\
+BCryptGenRandom,'BCryptGenRandom',\
+BCryptGetFipsAlgorithmMode,'BCryptGetFipsAlgorithmMode',\
+BCryptGetProperty,'BCryptGetProperty',\
+BCryptHash,'BCryptHash',\
+BCryptHashData,'BCryptHashData',\
+BCryptImportKey,'BCryptImportKey',\
+BCryptImportKeyPair,'BCryptImportKeyPair',\
+BCryptKeyDerivation,'BCryptKeyDerivation',\
+BCryptOpenAlgorithmProvider,'BCryptOpenAlgorithmProvider',\
+BCryptProcessMultiOperations,'BCryptProcessMultiOperations',\
+BCryptQueryContextConfiguration,'BCryptQueryContextConfiguration',\
+BCryptQueryContextFunctionConfiguration,'BCryptQueryContextFunctionConfiguration',\
+BCryptQueryContextFunctionProperty,'BCryptQueryContextFunctionProperty',\
+BCryptQueryProviderRegistration,'BCryptQueryProviderRegistration',\
+BCryptRegisterConfigChangeNotify,'BCryptRegisterConfigChangeNotify',\
+BCryptRemoveContextFunction,'BCryptRemoveContextFunction',\
+BCryptResolveProviders,'BCryptResolveProviders',\
+BCryptSecretAgreement,'BCryptSecretAgreement',\
+BCryptSetContextFunctionProperty,'BCryptSetContextFunctionProperty',\
+BCryptSetProperty,'BCryptSetProperty',\
+BCryptSignHash,'BCryptSignHash',\
+BCryptUnregisterConfigChangeNotify,'BCryptUnregisterConfigChangeNotify',\
+BCryptVerifySignature,'BCryptVerifySignature'

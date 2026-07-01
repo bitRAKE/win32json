@@ -1,0 +1,9 @@
+; Imports for SensApi.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+import sensapi,\
+IsDestinationReachableA,'IsDestinationReachableA',\
+IsDestinationReachableW,'IsDestinationReachableW',\
+IsNetworkAlive,'IsNetworkAlive'
+api \
+IsDestinationReachable

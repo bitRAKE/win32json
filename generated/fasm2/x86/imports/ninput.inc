@@ -1,0 +1,34 @@
+; Imports for NInput.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+import ninput,\
+AddPointerInteractionContext,'AddPointerInteractionContext',\
+BufferPointerPacketsInteractionContext,'BufferPointerPacketsInteractionContext',\
+CreateInteractionContext,'CreateInteractionContext',\
+DestroyInteractionContext,'DestroyInteractionContext',\
+GetCrossSlideParameterInteractionContext,'GetCrossSlideParameterInteractionContext',\
+GetHoldParameterInteractionContext,'GetHoldParameterInteractionContext',\
+GetInertiaParameterInteractionContext,'GetInertiaParameterInteractionContext',\
+GetInteractionConfigurationInteractionContext,'GetInteractionConfigurationInteractionContext',\
+GetMouseWheelParameterInteractionContext,'GetMouseWheelParameterInteractionContext',\
+GetPropertyInteractionContext,'GetPropertyInteractionContext',\
+GetStateInteractionContext,'GetStateInteractionContext',\
+GetTapParameterInteractionContext,'GetTapParameterInteractionContext',\
+GetTranslationParameterInteractionContext,'GetTranslationParameterInteractionContext',\
+ProcessBufferedPacketsInteractionContext,'ProcessBufferedPacketsInteractionContext',\
+ProcessInertiaInteractionContext,'ProcessInertiaInteractionContext',\
+ProcessPointerFramesInteractionContext,'ProcessPointerFramesInteractionContext',\
+RegisterOutputCallbackInteractionContext,'RegisterOutputCallbackInteractionContext',\
+RegisterOutputCallbackInteractionContext2,'RegisterOutputCallbackInteractionContext2',\
+RemovePointerInteractionContext,'RemovePointerInteractionContext',\
+ResetInteractionContext,'ResetInteractionContext',\
+SetCrossSlideParametersInteractionContext,'SetCrossSlideParametersInteractionContext',\
+SetHoldParameterInteractionContext,'SetHoldParameterInteractionContext',\
+SetInertiaParameterInteractionContext,'SetInertiaParameterInteractionContext',\
+SetInteractionConfigurationInteractionContext,'SetInteractionConfigurationInteractionContext',\
+SetMouseWheelParameterInteractionContext,'SetMouseWheelParameterInteractionContext',\
+SetPivotInteractionContext,'SetPivotInteractionContext',\
+SetPropertyInteractionContext,'SetPropertyInteractionContext',\
+SetTapParameterInteractionContext,'SetTapParameterInteractionContext',\
+SetTranslationParameterInteractionContext,'SetTranslationParameterInteractionContext',\
+StopInteractionContext,'StopInteractionContext'

@@ -1,0 +1,55 @@
+; Imports for WINHTTP.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+import winhttp,\
+WinHttpAddRequestHeaders,'WinHttpAddRequestHeaders',\
+WinHttpAddRequestHeadersEx,'WinHttpAddRequestHeadersEx',\
+WinHttpCheckPlatform,'WinHttpCheckPlatform',\
+WinHttpCloseHandle,'WinHttpCloseHandle',\
+WinHttpConnect,'WinHttpConnect',\
+WinHttpCrackUrl,'WinHttpCrackUrl',\
+WinHttpCreateProxyResolver,'WinHttpCreateProxyResolver',\
+WinHttpCreateUrl,'WinHttpCreateUrl',\
+WinHttpDetectAutoProxyConfigUrl,'WinHttpDetectAutoProxyConfigUrl',\
+WinHttpFreeProxyResult,'WinHttpFreeProxyResult',\
+WinHttpFreeProxyResultEx,'WinHttpFreeProxyResultEx',\
+WinHttpFreeProxySettings,'WinHttpFreeProxySettings',\
+WinHttpFreeQueryConnectionGroupResult,'WinHttpFreeQueryConnectionGroupResult',\
+WinHttpGetDefaultProxyConfiguration,'WinHttpGetDefaultProxyConfiguration',\
+WinHttpGetIEProxyConfigForCurrentUser,'WinHttpGetIEProxyConfigForCurrentUser',\
+WinHttpGetProxyForUrl,'WinHttpGetProxyForUrl',\
+WinHttpGetProxyForUrlEx,'WinHttpGetProxyForUrlEx',\
+WinHttpGetProxyForUrlEx2,'WinHttpGetProxyForUrlEx2',\
+WinHttpGetProxyResult,'WinHttpGetProxyResult',\
+WinHttpGetProxyResultEx,'WinHttpGetProxyResultEx',\
+WinHttpGetProxySettingsVersion,'WinHttpGetProxySettingsVersion',\
+WinHttpOpen,'WinHttpOpen',\
+WinHttpOpenRequest,'WinHttpOpenRequest',\
+WinHttpQueryAuthSchemes,'WinHttpQueryAuthSchemes',\
+WinHttpQueryConnectionGroup,'WinHttpQueryConnectionGroup',\
+WinHttpQueryDataAvailable,'WinHttpQueryDataAvailable',\
+WinHttpQueryHeaders,'WinHttpQueryHeaders',\
+WinHttpQueryHeadersEx,'WinHttpQueryHeadersEx',\
+WinHttpQueryOption,'WinHttpQueryOption',\
+WinHttpReadData,'WinHttpReadData',\
+WinHttpReadDataEx,'WinHttpReadDataEx',\
+WinHttpReadProxySettings,'WinHttpReadProxySettings',\
+WinHttpReceiveResponse,'WinHttpReceiveResponse',\
+WinHttpResetAutoProxy,'WinHttpResetAutoProxy',\
+WinHttpSendRequest,'WinHttpSendRequest',\
+WinHttpSetCredentials,'WinHttpSetCredentials',\
+WinHttpSetDefaultProxyConfiguration,'WinHttpSetDefaultProxyConfiguration',\
+WinHttpSetOption,'WinHttpSetOption',\
+WinHttpSetProxySettingsPerUser,'WinHttpSetProxySettingsPerUser',\
+WinHttpSetStatusCallback,'WinHttpSetStatusCallback',\
+WinHttpSetTimeouts,'WinHttpSetTimeouts',\
+WinHttpTimeFromSystemTime,'WinHttpTimeFromSystemTime',\
+WinHttpTimeToSystemTime,'WinHttpTimeToSystemTime',\
+WinHttpWebSocketClose,'WinHttpWebSocketClose',\
+WinHttpWebSocketCompleteUpgrade,'WinHttpWebSocketCompleteUpgrade',\
+WinHttpWebSocketQueryCloseStatus,'WinHttpWebSocketQueryCloseStatus',\
+WinHttpWebSocketReceive,'WinHttpWebSocketReceive',\
+WinHttpWebSocketSend,'WinHttpWebSocketSend',\
+WinHttpWebSocketShutdown,'WinHttpWebSocketShutdown',\
+WinHttpWriteData,'WinHttpWriteData',\
+WinHttpWriteProxySettings,'WinHttpWriteProxySettings'

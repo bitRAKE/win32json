@@ -1,0 +1,32 @@
+; Imports for PeerDist.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x64
+import peerdist,\
+PeerDistClientAddContentInformation,'PeerDistClientAddContentInformation',\
+PeerDistClientAddData,'PeerDistClientAddData',\
+PeerDistClientBlockRead,'PeerDistClientBlockRead',\
+PeerDistClientCancelAsyncOperation,'PeerDistClientCancelAsyncOperation',\
+PeerDistClientCloseContent,'PeerDistClientCloseContent',\
+PeerDistClientCompleteContentInformation,'PeerDistClientCompleteContentInformation',\
+PeerDistClientFlushContent,'PeerDistClientFlushContent',\
+PeerDistClientGetInformationByHandle,'PeerDistClientGetInformationByHandle',\
+PeerDistClientOpenContent,'PeerDistClientOpenContent',\
+PeerDistClientStreamRead,'PeerDistClientStreamRead',\
+PeerDistGetOverlappedResult,'PeerDistGetOverlappedResult',\
+PeerDistGetStatus,'PeerDistGetStatus',\
+PeerDistGetStatusEx,'PeerDistGetStatusEx',\
+PeerDistRegisterForStatusChangeNotification,'PeerDistRegisterForStatusChangeNotification',\
+PeerDistRegisterForStatusChangeNotificationEx,'PeerDistRegisterForStatusChangeNotificationEx',\
+PeerDistServerCancelAsyncOperation,'PeerDistServerCancelAsyncOperation',\
+PeerDistServerCloseContentInformation,'PeerDistServerCloseContentInformation',\
+PeerDistServerCloseStreamHandle,'PeerDistServerCloseStreamHandle',\
+PeerDistServerOpenContentInformation,'PeerDistServerOpenContentInformation',\
+PeerDistServerOpenContentInformationEx,'PeerDistServerOpenContentInformationEx',\
+PeerDistServerPublishAddToStream,'PeerDistServerPublishAddToStream',\
+PeerDistServerPublishCompleteStream,'PeerDistServerPublishCompleteStream',\
+PeerDistServerPublishStream,'PeerDistServerPublishStream',\
+PeerDistServerRetrieveContentInformation,'PeerDistServerRetrieveContentInformation',\
+PeerDistServerUnpublish,'PeerDistServerUnpublish',\
+PeerDistShutdown,'PeerDistShutdown',\
+PeerDistStartup,'PeerDistStartup',\
+PeerDistUnregisterForStatusChangeNotification,'PeerDistUnregisterForStatusChangeNotification'

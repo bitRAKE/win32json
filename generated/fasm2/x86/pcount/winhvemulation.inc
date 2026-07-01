@@ -1,0 +1,7 @@
+; Parameter counts for WinHvEmulation.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+WHvEmulatorCreateEmulator% = 2
+WHvEmulatorDestroyEmulator% = 1
+WHvEmulatorTryIoEmulation% = 5
+WHvEmulatorTryMmioEmulation% = 5

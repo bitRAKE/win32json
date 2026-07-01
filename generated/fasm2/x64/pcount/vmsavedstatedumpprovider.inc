@@ -1,0 +1,46 @@
+; Parameter counts for VmSavedStateDumpProvider.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x64
+ApplyGuestMemoryFix% = 5
+ApplyPendingSavedStateFileReplayLog% = 1
+CallStackUnwind% = 6
+FindSavedStateSymbolFieldInType% = 6
+ForceActiveVirtualTrustLevel% = 3
+ForceArchitecture% = 3
+ForceNestedHostMode% = 4
+ForcePagingMode% = 3
+GetActiveVirtualTrustLevel% = 3
+GetArchitecture% = 3
+GetEnabledVirtualTrustLevels% = 3
+GetGuestEnabledVirtualTrustLevels% = 2
+GetGuestOsInfo% = 3
+GetGuestPhysicalMemoryChunks% = 4
+GetGuestRawSavedMemorySize% = 2
+GetMemoryBlockCacheLimit% = 2
+GetNestedVirtualizationMode% = 3
+GetPagingMode% = 3
+GetRegisterValue% = 4
+GetSavedStateSymbolFieldInfo% = 4
+GetSavedStateSymbolProviderHandle% = 1
+GetSavedStateSymbolTypeSize% = 4
+GetVpCount% = 2
+GuestPhysicalAddressToRawSavedMemoryOffset% = 3
+GuestVirtualAddressToPhysicalAddress% = 5
+InKernelSpace% = 3
+IsActiveVirtualTrustLevelEnabled% = 3
+IsNestedVirtualizationEnabled% = 2
+LoadSavedStateFile% = 2
+LoadSavedStateFiles% = 3
+LoadSavedStateModuleSymbols% = 5
+LoadSavedStateModuleSymbolsEx% = 6
+LoadSavedStateSymbolProvider% = 3
+LocateSavedStateFiles% = 5
+ReadGuestPhysicalAddress% = 5
+ReadGuestRawSavedMemory% = 5
+ReadSavedStateGlobalVariable% = 5
+ReleaseSavedStateFiles% = 1
+ReleaseSavedStateSymbolProvider% = 1
+ResolveSavedStateGlobalVariableAddress% = 5
+ScanMemoryForDosImages% = 8
+SetMemoryBlockCacheLimit% = 2
+SetSavedStateSymbolProviderDebugInfoCallback% = 2

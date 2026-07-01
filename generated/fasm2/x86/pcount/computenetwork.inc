@@ -1,0 +1,44 @@
+; Parameter counts for computenetwork.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+HcnCloseEndpoint% = 1
+HcnCloseGuestNetworkService% = 1
+HcnCloseLoadBalancer% = 1
+HcnCloseNamespace% = 1
+HcnCloseNetwork% = 1
+HcnCreateEndpoint% = 5
+HcnCreateGuestNetworkService% = 4
+HcnCreateLoadBalancer% = 4
+HcnCreateNamespace% = 4
+HcnCreateNetwork% = 4
+HcnDeleteEndpoint% = 2
+HcnDeleteGuestNetworkService% = 2
+HcnDeleteLoadBalancer% = 2
+HcnDeleteNamespace% = 2
+HcnDeleteNetwork% = 2
+HcnEnumerateEndpoints% = 3
+HcnEnumerateGuestNetworkPortReservations% = 2
+HcnEnumerateLoadBalancers% = 3
+HcnEnumerateNamespaces% = 3
+HcnEnumerateNetworks% = 3
+HcnFreeGuestNetworkPortReservations% = 1
+HcnModifyEndpoint% = 3
+HcnModifyGuestNetworkService% = 3
+HcnModifyLoadBalancer% = 3
+HcnModifyNamespace% = 3
+HcnModifyNetwork% = 3
+HcnOpenEndpoint% = 3
+HcnOpenLoadBalancer% = 3
+HcnOpenNamespace% = 3
+HcnOpenNetwork% = 3
+HcnQueryEndpointProperties% = 4
+HcnQueryLoadBalancerProperties% = 4
+HcnQueryNamespaceProperties% = 4
+HcnQueryNetworkProperties% = 4
+HcnRegisterGuestNetworkServiceCallback% = 4
+HcnRegisterServiceCallback% = 3
+HcnReleaseGuestNetworkServicePortReservationHandle% = 1
+HcnReserveGuestNetworkServicePort% = 5
+HcnReserveGuestNetworkServicePortRange% = 4
+HcnUnregisterGuestNetworkServiceCallback% = 1
+HcnUnregisterServiceCallback% = 1

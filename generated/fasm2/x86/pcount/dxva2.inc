@@ -1,0 +1,41 @@
+; Parameter counts for dxva2.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x86
+CapabilitiesRequestAndCapabilitiesReply% = 3
+DegaussMonitor% = 1
+DestroyPhysicalMonitor% = 1
+DestroyPhysicalMonitors% = 2
+DXVA2CreateDirect3DDeviceManager9% = 2
+DXVA2CreateVideoService% = 3
+DXVAHD_CreateDevice% = 5
+GetCapabilitiesStringLength% = 2
+GetMonitorBrightness% = 4
+GetMonitorCapabilities% = 3
+GetMonitorColorTemperature% = 2
+GetMonitorContrast% = 4
+GetMonitorDisplayAreaPosition% = 5
+GetMonitorDisplayAreaSize% = 5
+GetMonitorRedGreenOrBlueDrive% = 5
+GetMonitorRedGreenOrBlueGain% = 5
+GetMonitorTechnologyType% = 2
+GetNumberOfPhysicalMonitorsFromHMONITOR% = 2
+GetNumberOfPhysicalMonitorsFromIDirect3DDevice9% = 2
+GetPhysicalMonitorsFromHMONITOR% = 3
+GetPhysicalMonitorsFromIDirect3DDevice9% = 3
+GetTimingReport% = 2
+GetVCPFeatureAndVCPFeatureReply% = 5
+OPMGetVideoOutputForTarget% = 4
+OPMGetVideoOutputsFromHMONITOR% = 4
+OPMGetVideoOutputsFromIDirect3DDevice9Object% = 4
+RestoreMonitorFactoryColorDefaults% = 1
+RestoreMonitorFactoryDefaults% = 1
+SaveCurrentMonitorSettings% = 1
+SaveCurrentSettings% = 1
+SetMonitorBrightness% = 2
+SetMonitorColorTemperature% = 2
+SetMonitorContrast% = 2
+SetMonitorDisplayAreaPosition% = 3
+SetMonitorDisplayAreaSize% = 3
+SetMonitorRedGreenOrBlueDrive% = 3
+SetMonitorRedGreenOrBlueGain% = 3
+SetVCPFeature% = 3

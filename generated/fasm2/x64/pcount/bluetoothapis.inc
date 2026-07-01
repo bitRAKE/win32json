@@ -1,0 +1,44 @@
+; Parameter counts for BluetoothApis.dll
+; Generated from marlersoft/win32json. Do not edit by hand.
+; Target architecture: x64
+BluetoothEnableDiscovery% = 2
+BluetoothEnableIncomingConnections% = 2
+BluetoothEnumerateInstalledServices% = 4
+BluetoothFindDeviceClose% = 1
+BluetoothFindFirstDevice% = 2
+BluetoothFindFirstRadio% = 2
+BluetoothFindNextDevice% = 2
+BluetoothFindNextRadio% = 2
+BluetoothFindRadioClose% = 1
+BluetoothGATTAbortReliableWrite% = 3
+BluetoothGATTBeginReliableWrite% = 3
+BluetoothGATTEndReliableWrite% = 3
+BluetoothGATTGetCharacteristics% = 6
+BluetoothGATTGetCharacteristicValue% = 6
+BluetoothGATTGetDescriptors% = 6
+BluetoothGATTGetDescriptorValue% = 6
+BluetoothGATTGetIncludedServices% = 6
+BluetoothGATTGetServices% = 5
+BluetoothGATTRegisterEvent% = 7
+BluetoothGATTSetCharacteristicValue% = 5
+BluetoothGATTSetDescriptorValue% = 4
+BluetoothGATTUnregisterEvent% = 2
+BluetoothGetDeviceInfo% = 2
+BluetoothGetRadioInfo% = 2
+BluetoothIsConnectable% = 1
+BluetoothIsDiscoverable% = 1
+BluetoothIsVersionAvailable% = 2
+BluetoothRegisterForAuthentication% = 4
+BluetoothRegisterForAuthenticationEx% = 4
+BluetoothRemoveDevice% = 1
+BluetoothSdpEnumAttributes% = 4
+BluetoothSdpGetAttributeValue% = 4
+BluetoothSdpGetContainerElementData% = 4
+BluetoothSdpGetElementData% = 3
+BluetoothSdpGetString% = 6
+BluetoothSendAuthenticationResponse% = 3
+BluetoothSendAuthenticationResponseEx% = 2
+BluetoothSetLocalServiceInfo% = 4
+BluetoothSetServiceState% = 4
+BluetoothUnregisterAuthentication% = 1
+BluetoothUpdateDeviceRecord% = 1
