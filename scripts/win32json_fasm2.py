@@ -141,6 +141,117 @@ def align_up(value: int, alignment: int) -> int:
     return (value + alignment - 1) & -alignment
 
 
+# Collision handling, driven by tests/fasm2-collision (probe every win32json
+# name that also appears as a token in the fasm2 include tree against fasmg,
+# in definition / ?-prefixed definition / expression-reference / struct-field
+# contexts). Three classes emerged:
+#
+# 1. Line-start interception (directives, instructions, macros: Match, Add,
+#    Format, fScale, ...). Harmless when the definition is written with the
+#    fasmg `?` prefix (`?Match = 0Fh`), which forces symbol interpretation;
+#    bare references and dotted field access then work with the original
+#    name. All constant/enum and struct-field definitions are emitted
+#    ?-prefixed, so this class needs no renaming at all.
+#
+# 2. Expression-level names: predefined register/element symbols (Eax, R8,
+#    cx, Byte, at, From, ...) where a definition SILENTLY clobbers the
+#    element, and operators / circular symbolics (string, format, align,
+#    Float) where bare references misparse. Only renaming (`_` postfix)
+#    helps; the `?` prefix does not protect references.
+#
+# 3. Struct-name shadowing: the struct/ends macro pair defines a line-start
+#    macro per struct name, so a *type* whose name matches a directive or
+#    macro (MONITOR, SECTION, STRING) would shadow it from the declaration
+#    onward; types additionally get class-1 names renamed.
+
+# Exact spellings that probed as class 2 (verdict "rename" in
+# tests/fasm2-collision/full_report.tsv).
+RENAME_EXACT = frozenset(
+    "Align Byte CS CX Cs DS DUP DWord DX Ds Dword Eax Ebp Ebx Ecx Edi Edx Eip"
+    " Element End Es Esi Esp Float From GS MetaData Metadata R10 R11 R12 R13"
+    " R14 R15 R8 R9 Rax Rbp Rbx Rcx Rdi Rdx Rip Rsi Rsp STRING Scale Sp"
+    " String Word Xmm0 Xmm1 Xmm2 Xmm3 align at ch cl cx dx eDx element end"
+    " format from fs scale si st string".split()
+)
+
+
+def _register_family() -> frozenset[str]:
+    names = set(
+        "al cl dl bl ah ch dh bh spl bpl sil dil"
+        " ax cx dx bx sp bp si di ip"
+        " eax ecx edx ebx esp ebp esi edi eip"
+        " rax rcx rdx rbx rsp rbp rsi rdi rip"
+        " cs ds es fs gs ss st".split()
+    )
+    names.update(f"r{i}{s}" for i in range(8, 16) for s in ("", "b", "w", "d"))
+    names.update(f"{p}{i}" for p in ("xmm", "ymm", "zmm") for i in range(32))
+    names.update(f"{p}{i}" for p in ("mm", "tmm", "st") for i in range(8))
+    names.update(f"k{i}" for i in range(8))
+    names.update(f"{p}{i}" for p in ("cr", "dr") for i in range(16))
+    names.update(f"bnd{i}" for i in range(4))
+    return frozenset(names)
+
+
+# Class-2 stems that are case-insensitive in fasmg/fasm2 (register and size
+# elements, expression operators, special symbolics), completing the probed
+# exact spellings for names future win32json revisions might add.
+RENAME_CASELESS = _register_family() | frozenset(
+    "byte word dword fword pword qword tbyte tword dqword xword qqword yword"
+    " dqqword zword"
+    " at dup from eq eqtype relativeto defined definite used mod not and or"
+    " xor shl shr string sizeof lengthof elementsof elementof scaleof"
+    " metadataof trunc float bappend"
+    " element end align format scale metadata".split()
+)
+
+# Class-1 exact spellings (verdict "qpfx"): fine for ?-prefixed constants,
+# but as a STRUCT NAME they would shadow the intercepting directive, macro,
+# or instruction, so type declarations rename these too.
+LINESTART_EXACT = frozenset(
+    "Add add bitmap Break Call CpuId cursor du dw DW Enter err file File"
+    " Format frame Frame fScale icon Import In Inc Int Invoke Label Leave"
+    " Library load Load Local Lock Looped Match MONITOR monitor Monitor"
+    " NameSpace nameSpace Out out pause Pause Pop Postpone Prefetch PROC"
+    " Purge Push rcl RESTORE restore Restore RP Rp SECTION Section Serialize"
+    " Store str Str Use Virtual Wait".split()
+)
+
+# Case-insensitive fasmg directives and fasm2 macro-layer names, as a safety
+# net for future type names (same shadowing concern as LINESTART_EXACT).
+LINESTART_CASELESS = frozenset(
+    "db dd dp dq dt ddq dqq dbx rb rw rd rq rt if else while repeat iterate"
+    " irp irpv indx macro struc esc purge restruc define redefine equ reequ"
+    " postpone calminstruction eval include org assert display ends union"
+    " struct import api endp locals endl heap ccall cinvoke stdcall comcall"
+    " cominvk menu dialog label section virtual match rmatch namespace err"
+    " break local restore store file".split()
+)
+
+
+# Struct fields are emitted ?-prefixed and land in the instance namespace,
+# which shields every collision class above — except `at`: a field label
+# named `at` poisons the union machinery's own `virtual at union` statements
+# ("invalid or inaccessible addressing area"). The only fld_qpfx failure in
+# the full tests/fasm2-collision sweep.
+FIELD_RENAME_CASELESS = frozenset(("at",))
+
+
+def field_emit_name(name: str) -> str:
+    return name + "_" if name.lower() in FIELD_RENAME_CASELESS else name
+
+
+def is_rename(name: str) -> bool:
+    return name in RENAME_EXACT or name.lower() in RENAME_CASELESS
+
+
+def is_type_rename(name: str) -> bool:
+    return (
+        is_rename(name)
+        or name in LINESTART_EXACT
+        or name.lower() in LINESTART_CASELESS
+    )
+
+
 def sanitize_identifier(text: str) -> str:
     text = re.sub(r"[^A-Za-z0-9_?@$]", "_", text)
     if not text or not re.match(r"[A-Za-z_?@$]", text[0]):
@@ -163,12 +274,32 @@ def is_apiset_dll(dll: str) -> bool:
     return dll.lower().startswith(("api-ms-", "ext-ms-"))
 
 
-def fasm_string(text: str) -> str:
+def fasm_quote(text: str) -> str:
     if "'" in text and '"' not in text:
         return f'"{text}"'
     if "'" in text:
         text = text.replace("'", "''")
     return f"'{text}'"
+
+
+def fasm_string(text: str) -> str:
+    # Bytes below 0x20 cannot appear inside fasmg quoted strings; emit them as
+    # numeric list items between quoted runs: 'some',0,'text'
+    parts: list[str] = []
+    run: list[str] = []
+    for ch in text:
+        if ord(ch) >= 0x20:
+            run.append(ch)
+            continue
+        if run:
+            parts.append(fasm_quote("".join(run)))
+            run = []
+        parts.append(fasm_int(ord(ch)))
+    if run:
+        parts.append(fasm_quote("".join(run)))
+    if not parts:
+        return "''"
+    return ",".join(parts)
 
 
 def fasm_int(value: int) -> str:
@@ -379,22 +510,32 @@ class Win32JsonModel:
         for sym in self.symbols:
             by_raw[sym.raw].append(sym)
 
+        def sym_rename(sym: SymbolDecl, name: str) -> bool:
+            # types become struct/interface macros, so line-start
+            # interceptor names would get shadowed by the declaration
+            return is_type_rename(name) if sym.kind == "type" else is_rename(name)
+
         used: set[str] = set()
         for raw, group in sorted(by_raw.items(), key=lambda pair: min(s.order for s in pair[1])):
-            if len(group) == 1 and raw not in used:
+            if len(group) == 1 and raw not in used and not sym_rename(group[0], raw):
                 group[0].emitted = raw
                 used.add(raw)
                 continue
 
             for sym in sorted(group, key=lambda s: s.order):
-                base = self._conflict_name(sym)
+                base = self._conflict_name(sym) if len(group) > 1 else raw
+                if sym_rename(sym, base):
+                    base = base + "_"
+                    reason = "renamed to avoid fasm2 reserved name"
+                else:
+                    reason = "renamed to avoid flat fasm2 symbol collision"
                 name = base
                 suffix = 2
                 while name in used:
                     name = f"{base}__{suffix}"
                     suffix += 1
                 sym.emitted = name
-                sym.reason = "renamed to avoid flat fasm2 symbol collision"
+                sym.reason = reason
                 used.add(name)
                 self.stats.renamed_symbols += 1
 
@@ -405,6 +546,8 @@ class Win32JsonModel:
                 parent = self.type_by_key[decl.parent]
                 stem = decl.name.lstrip("_") or decl.name
                 decl.emitted = sanitize_identifier(f"{parent.emitted}__{stem}")
+                if is_type_rename(decl.emitted):
+                    decl.emitted += "_"
                 base = decl.emitted
                 suffix = 2
                 while decl.emitted in used:
@@ -426,7 +569,10 @@ class Win32JsonModel:
         return sanitize_identifier(f"{api_prefix(sym.api)}__{sym.raw}")
 
     def dll_aliases(self) -> dict[str, str]:
-        dlls = sorted({item["DllImport"] for item in self.functions}, key=str.lower)
+        # exact-name tiebreak: case variants like RstrtMgr.dll/rstrtmgr.dll
+        # otherwise land in hash-randomized set order, flipping which one
+        # gets the _2 alias between runs
+        dlls = sorted({item["DllImport"] for item in self.functions}, key=lambda dll: (dll.lower(), dll))
         used: set[str] = set()
         aliases: dict[str, str] = {}
         for dll in dlls:
@@ -537,16 +683,20 @@ class Win32JsonModel:
                 field_offset = offset
                 offset += layout.size
 
+            field_name = field_emit_name(field["Name"])
+            field_comment = layout.comment
+            if field_name != field["Name"]:
+                field_comment = f"{field_comment} (renamed from {field['Name']})"
             fields.append(
                 FieldLayout(
-                    name=field["Name"],
+                    name=field_name,
                     type_expr=field["Type"],
                     layout=layout,
                     offset=field_offset,
                     size=layout.size,
                     align=effective_align,
                     render=self.render_field_storage(field["Type"], layout, decl),
-                    comment=layout.comment,
+                    comment=field_comment,
                 )
             )
 
@@ -651,6 +801,21 @@ class Win32JsonModel:
         for method in decl.item.get("Methods", []) or []:
             if include_arch(method, self.arch):
                 methods.append(method["Name"])
+        # COM method overloads share a name; the interface macro defines a
+        # label per method, so number the repeats: Name, Name__2, Name__3 ...
+        seen: dict[str, int] = {}
+        taken = set(methods)
+        for index, name in enumerate(methods):
+            count = seen.get(name, 0) + 1
+            seen[name] = count
+            if count > 1:
+                candidate = f"{name}__{count}"
+                while candidate in taken:
+                    count += 1
+                    candidate = f"{name}__{count}"
+                seen[name] = count
+                methods[index] = candidate
+                taken.add(candidate)
         self._com_method_cache[decl.key] = methods
         return methods
 
@@ -948,9 +1113,9 @@ class Fasm2Writer:
             if value is None and item.get("ValueType") == "String":
                 value = ""
             if isinstance(value, str):
-                lines.append(f"{sym.emitted} equ {fasm_value(value)}")
+                lines.append(f"?{sym.emitted} equ {fasm_value(value)}")
             else:
-                lines.append(f"{sym.emitted} = {fasm_value(value)}")
+                lines.append(f"?{sym.emitted} = {fasm_value(value)}")
 
         lines.append("; enum values")
         for decl in self.model.types:
@@ -962,7 +1127,7 @@ class Fasm2Writer:
             lines.append(f"sizeof.{decl.emitted} = {size}")
             for value_index, value in enumerate(decl.item.get("Values", []) or []):
                 sym = self.model.enum_symbol[(decl.key, value["Name"], value_index)]
-                lines.append(f"{sym.emitted} = {fasm_value(value['Value'])}")
+                lines.append(f"?{sym.emitted} = {fasm_value(value['Value'])}")
 
         self._write_text(self.out_dir / "equates" / "all.inc", lines)
 
@@ -1014,7 +1179,7 @@ class Fasm2Writer:
         if record.is_union:
             lines.append("union")
             for field in record.fields:
-                lines.append(f"{field.name} {field.render} ; {field.comment}")
+                lines.append(f"?{field.name} {field.render} ; {field.comment}")
             lines.append("ends")
             union_payload = max((field.size for field in record.fields), default=0)
             if record.size > union_payload:
@@ -1028,7 +1193,7 @@ class Fasm2Writer:
                     lines.append(f"db {pad} dup (?) ; padding to offset {field.offset}")
                     pad_index += 1
                     offset = field.offset
-                lines.append(f"{field.name} {field.render} ; offset {field.offset}, {field.comment}")
+                lines.append(f"?{field.name} {field.render} ; offset {field.offset}, {field.comment}")
                 offset += field.size
             if record.size > offset:
                 lines.append(f"db {record.size - offset} dup (?) ; tail padding")
@@ -1420,20 +1585,33 @@ def run_fasm_smoke(
         com_inc = "macro/com32.inc"
     else:
         com_inc = "macro/com64.inc"
-    smoke = "\n".join(
-        [
-            "format binary",
-            "include 'macro/struct.inc'",
-            f"include '{com_inc}'",
-            f"include '{slash_out}/win32json.inc'",
-            "virtual at 0",
-            "  smoke_guid WIN32JSON_GUID",
-            "end virtual",
-            "db 0",
-            "",
-        ]
-    )
-    errors.extend(run_fasm_source("declaration", smoke, out_dir, include_dir, fasm2, timeout))
+    smoke_lines = [
+        "format binary",
+        "include 'macro/struct.inc'",
+        f"include '{com_inc}'",
+        f"include '{slash_out}/win32json.inc'",
+        "virtual at 0",
+        "  smoke_guid WIN32JSON_GUID",
+        "end virtual",
+        "db 0",
+    ]
+    # Reference the last emitted constant and struct so silent mid-file parse
+    # derailments (e.g. stray control bytes) fail the smoke instead of hiding.
+    last_const = None
+    for index, item in enumerate(model.constants):
+        if isinstance(item.get("Value"), int) and not isinstance(item.get("Value"), bool):
+            last_const = (model.constant_symbol[index].emitted, item["Value"])
+    if last_const:
+        smoke_lines.append(f"assert {last_const[0]} = {fasm_int(last_const[1])}")
+    # Instantiate every struct/union: field-name collisions with struct macro
+    # names only surface at instantiation time.
+    smoke_lines.append("virtual at 0")
+    for index, decl in enumerate(model.ordered_types()):
+        if decl.kind in ("Struct", "Union"):
+            smoke_lines.append(f"  smoke_{index} {decl.emitted}")
+    smoke_lines.append("end virtual")
+    smoke_lines.append("")
+    errors.extend(run_fasm_source("declaration", "\n".join(smoke_lines), out_dir, include_dir, fasm2, timeout))
     return errors
 
 

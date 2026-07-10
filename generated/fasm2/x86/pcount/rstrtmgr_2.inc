@@ -1,8 +1,9 @@
-; Parameter counts for RstrtMgr.dll
+; Parameter counts for rstrtmgr.dll
 ; Generated from marlersoft/win32json. Do not edit by hand.
 ; Target architecture: x86
-RmAddFilter% = 5
-RmCancelCurrentTask% = 1
-RmGetFilterList% = 4
-RmJoinSession% = 2
-RmRemoveFilter% = 4
+RmEndSession% = 1
+RmGetList% = 5
+RmRegisterResources% = 7
+RmRestart% = 3
+RmShutdown% = 3
+RmStartSession% = 3

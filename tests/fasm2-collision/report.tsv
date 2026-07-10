@@ -1,0 +1,85 @@
+name	verdict	shadow_fix	predef	def_plain	def_qpfx	use_expr	fld_plain	fld_qpfx	fld_shadow	fld_shadow_q	first_error
+Add	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: missing argument. | Add = 0
+Align	rename	qpfx	FAIL	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: detected a circular reference of symbolic values. | if defined Align
+align	rename	qpfx	FAIL	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: detected a circular reference of symbolic values. | if defined align
+at	rename	rename	sym	ok	ok	ok	ok	ok	FAIL	FAIL	Error: invalid or inaccessible addressing area. | ? [9]
+bitmap	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | bitmap db ?
+Break	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: unexpected instruction. | Break = 0
+CpuId	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: extra characters on line. | cpuid? [0]
+CS	rename	qpfx	sym	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: illegal instruction. | cs? [2] ? [4]
+Cs	rename	qpfx	sym	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: illegal instruction. | cs? [2] ? [4]
+cursor	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | cursor db ?
+CX	rename	qpfx	sym	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | CX db ?
+CY	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | CY db ?
+Ds	rename	qpfx	sym	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: illegal instruction. | ds? [2] ? [4]
+DS	rename	qpfx	sym	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: illegal instruction. | ds? [2] ? [4]
+du	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | du = 0
+Dup	rename	qpfx	sym	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | Dup db ?
+dup	rename	qpfx	sym	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | dup db ?
+DW	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | dw? [15] word? [1] (CALM)
+dw	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | dw? [15] word? [1] (CALM)
+DWord	rename	qpfx	sym	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | dword? [1] (CALM)
+Dword	rename	qpfx	sym	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | dword? [1] (CALM)
+Element	rename	qpfx	sym	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid identifier. | Element = 0
+element	rename	rename	sym	FAIL	ok	ok	FAIL	ok	FAIL	FAIL	Error: invalid identifier. | element = 0
+End	rename	qpfx	sym	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid argument. | End = 0
+ends	qpfx	rename	ok	FAIL	ok	ok	FAIL	ok	FAIL	FAIL	Error: extra characters on line. | macro ends? [0]
+Enter	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: missing argument. | Enter = 0
+Entry	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | Entry db ?
+err	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | err = 0
+Es	rename	qpfx	sym	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: illegal instruction. | es? [2] ? [4]
+File	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | File = 0
+file	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | file = 0
+Float	rename	qpfx	FAIL	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | if defined Float
+Format	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid argument. | format? [11]
+format	rename	rename	ok	FAIL	FAIL	FAIL	FAIL	ok	FAIL	FAIL	Error: invalid argument. | format? [11]
+Frame	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | Frame db ?
+frame	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | frame db ?
+fs	rename	qpfx	sym	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: illegal instruction. | fs? [2] ? [4]
+fScale	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: extra characters on line. | fscale? [0]
+GS	rename	qpfx	sym	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: illegal instruction. | gs? [2] ? [4]
+icon	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | icon db ?
+In	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: missing argument. | In = 0
+Inc	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | inc? [2] x86.parse_operand@dest [32] (CALM)
+Int	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | int? [2] (CALM)
+Interface	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | Interface db ?
+Invoke	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | Invoke db ?
+Label	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid identifier. | Label = 0
+Library	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | Library db ?
+Load	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid identifier. | Load = 0
+Local	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: unexpected instruction. | Local = 0
+Lock	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: illegal instruction. | lock? [2] ? [4]
+Looped	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | looped? [2] x86.parse_jump_operand@dest [21] x86.parse_operand@dest [32] (CALM)
+Match	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid argument. | Match = 0
+mod	rename	rename	sym	FAIL	FAIL	FAIL	ok	ok	FAIL	FAIL	Error: invalid expression. | check address mod alignment = 0
+MONITOR	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | if ~ arg1 eq eax | ~ arg2 eq ecx | ~ arg3 eq edx
+Monitor	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | if ~ arg1 eq eax | ~ arg2 eq ecx | ~ arg3 eq edx
+monitor	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | if ~ arg1 eq eax | ~ arg2 eq ecx | ~ arg3 eq edx
+NameSpace	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid identifier. | NameSpace = 0
+nameSpace	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid identifier. | nameSpace = 0
+Out	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: missing argument. | Out = 0
+out	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: missing argument. | out = 0
+Prefetch	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | prefetch? [2] MMX.parse_operand@src [2] x86.parse_operand@src [32] (CALM)
+PrivateData	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | PrivateData db ?
+PROC	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | PROC db ?
+Ptr	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | Ptr db ?
+Push	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | push? [29] x86.push_instruction [2] x86.parse_operand@src [32] (CALM)
+Quality	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | Quality db ?
+rcl	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: missing argument. | rcl = 0
+Resource	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | Resource db ?
+RESTORE	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid identifier. | RESTORE = 0
+RP	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | Rp = 0
+Rp	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | Rp = 0
+SECTION	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | Section = 0
+Section	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | Section = 0
+sizeof	rename	rename	FAIL	FAIL	FAIL	FAIL	ok	ok	FAIL	FAIL	Error: invalid expression. | if defined sizeof
+Stack	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | Stack db ?
+Store	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | Store = 0
+Str	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | str? [2] x86.parse_operand@dest [32] (CALM)
+str	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | str? [2] x86.parse_operand@dest [32] (CALM)
+string	rename	rename	FAIL	FAIL	FAIL	FAIL	ok	ok	FAIL	FAIL	Error: invalid expression. | if defined string
+struct	rename	rename	FAIL	FAIL	ok	ok	FAIL	ok	FAIL	FAIL	Error: detected a circular reference of symbolic values. | if defined struct
+union	clean	qpfx	ok	ok	ok	ok	ok	ok	FAIL	ok	Error: invalid expression. | union db ?
+Use	qpfx	qpfx	ok	ok	ok	ok	FAIL	ok	FAIL	ok	Error: illegal instruction. | ? [58] macro use? [2] ? [17] ? [4]
+Virtual	qpfx	qpfx	ok	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid argument. | Virtual = 0
+Word	rename	qpfx	sym	FAIL	ok	ok	FAIL	ok	FAIL	ok	Error: invalid expression. | word? [1] (CALM)

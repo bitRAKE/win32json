@@ -1,17 +1,18 @@
-; Imports for tdh.dll
+; Imports for TDH.dll
 ; Generated from marlersoft/win32json. Do not edit by hand.
 ; Target architecture: x64
 import tdh,\
-TdhAggregatePayloadFilters,'TdhAggregatePayloadFilters',\
-TdhCleanupPayloadEventFilterDescriptor,'TdhCleanupPayloadEventFilterDescriptor',\
-TdhCloseDecodingHandle,'TdhCloseDecodingHandle',\
-TdhCreatePayloadFilter,'TdhCreatePayloadFilter',\
-TdhDeletePayloadFilter,'TdhDeletePayloadFilter',\
-TdhEnumerateProviderFilters,'TdhEnumerateProviderFilters',\
-TdhEnumerateProvidersForDecodingSource,'TdhEnumerateProvidersForDecodingSource',\
-TdhGetDecodingParameter,'TdhGetDecodingParameter',\
-TdhGetWppMessage,'TdhGetWppMessage',\
-TdhGetWppProperty,'TdhGetWppProperty',\
-TdhLoadManifestFromBinary,'TdhLoadManifestFromBinary',\
-TdhOpenDecodingHandle,'TdhOpenDecodingHandle',\
-TdhSetDecodingParameter,'TdhSetDecodingParameter'
+TdhEnumerateManifestProviderEvents,'TdhEnumerateManifestProviderEvents',\
+TdhEnumerateProviderFieldInformation,'TdhEnumerateProviderFieldInformation',\
+TdhEnumerateProviders,'TdhEnumerateProviders',\
+TdhFormatProperty,'TdhFormatProperty',\
+TdhGetEventInformation,'TdhGetEventInformation',\
+TdhGetEventMapInformation,'TdhGetEventMapInformation',\
+TdhGetManifestEventInformation,'TdhGetManifestEventInformation',\
+TdhGetProperty,'TdhGetProperty',\
+TdhGetPropertySize,'TdhGetPropertySize',\
+TdhLoadManifest,'TdhLoadManifest',\
+TdhLoadManifestFromMemory,'TdhLoadManifestFromMemory',\
+TdhQueryProviderFieldInformation,'TdhQueryProviderFieldInformation',\
+TdhUnloadManifest,'TdhUnloadManifest',\
+TdhUnloadManifestFromMemory,'TdhUnloadManifestFromMemory'
