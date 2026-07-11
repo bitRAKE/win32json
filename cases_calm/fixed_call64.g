@@ -1,4 +1,4 @@
-; Focused fixed-frame lowering for the usage cases.
+; Focused fixed-frame lowering for the CALM projection usage cases.
 ;
 ; The caller must reserve and align a complete Win64 frame. This provider never
 ; changes RSP. It deliberately accepts only the immediate/register forms used

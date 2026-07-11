@@ -71438,6 +71438,10 @@ struct LINEAGENTGROUPENTRY
 ?dwNameSize dd ? ; offset 16, UInt32
 ?dwNameOffset dd ? ; offset 20, UInt32
 ends
+; struct _GetGroupList_e__Struct (Devices.Tapi), sizeof=24, align=1
+struct LINEPROXYREQUEST__Anonymous_e__Union__GetGroupList_e__Struct
+?GroupList LINEAGENTGROUPLIST ; offset 0, LINEAGENTGROUPLIST
+ends
 ; struct _GetAgentGroupList_e__Struct (Devices.Tapi), sizeof=28, align=1
 struct LINEPROXYREQUEST__Anonymous_e__Union__GetAgentGroupList_e__Struct
 ?dwAddressID dd ? ; offset 0, UInt32
@@ -71447,10 +71451,6 @@ ends
 struct LINEPROXYREQUEST__Anonymous_e__Union__SetAgentGroup_e__Struct
 ?dwAddressID dd ? ; offset 0, UInt32
 ?GroupList LINEAGENTGROUPLIST ; offset 4, LINEAGENTGROUPLIST
-ends
-; struct _GetGroupList_e__Struct (Devices.Tapi), sizeof=24, align=1
-struct LINEPROXYREQUEST__Anonymous_e__Union__GetGroupList_e__Struct
-?GroupList LINEAGENTGROUPLIST ; offset 0, LINEAGENTGROUPLIST
 ends
 ; struct _GetAgentStatus_e__Struct (Devices.Tapi), sizeof=60, align=1
 struct LINEPROXYREQUEST__Anonymous_e__Union__GetAgentStatus_e__Struct
@@ -77423,18 +77423,18 @@ struct DDHAL_DRVSETCOLORKEYDATA
 ?ddRVal dd ? ; offset 20, Int32
 ?SetColorKey dq ? ; offset 24, pointer
 ends
-; union _Anonymous1_e__Union (Graphics.DirectDraw), sizeof=8, align=4
-struct DD_SURFACE_LOCAL__Anonymous1_e__Union
-union
-?ddckCKSrcOverlay DDCOLORKEY ; DDCOLORKEY
-?ddckCKSrcBlt DDCOLORKEY ; DDCOLORKEY
-ends
-ends
 ; union _Anonymous2_e__Union (Graphics.DirectDraw), sizeof=8, align=4
 struct DD_SURFACE_LOCAL__Anonymous2_e__Union
 union
 ?ddckCKDestOverlay DDCOLORKEY ; DDCOLORKEY
 ?ddckCKDestBlt DDCOLORKEY ; DDCOLORKEY
+ends
+ends
+; union _Anonymous1_e__Union (Graphics.DirectDraw), sizeof=8, align=4
+struct DD_SURFACE_LOCAL__Anonymous1_e__Union
+union
+?ddckCKSrcOverlay DDCOLORKEY ; DDCOLORKEY
+?ddckCKSrcBlt DDCOLORKEY ; DDCOLORKEY
 ends
 ends
 ; struct DD_SETCOLORKEYDATA (Graphics.DirectDraw), sizeof=40, align=8
@@ -85375,18 +85375,18 @@ struct DRT_REGISTRATION
 ?key DRT_DATA ; offset 0, DRT_DATA
 ?appData DRT_DATA ; offset 16, DRT_DATA
 ends
+; struct _registrationStateChange_e__Struct (NetworkManagement.P2P), sizeof=24, align=8
+struct DRT_EVENT_DATA__Anonymous_e__Union__registrationStateChange_e__Struct
+?state dd ? ; offset 0, DRT_REGISTRATION_STATE
+db 4 dup (?) ; padding to offset 8
+?localKey DRT_DATA ; offset 8, DRT_DATA
+ends
 ; struct _leafsetKeyChange_e__Struct (NetworkManagement.P2P), sizeof=40, align=8
 struct DRT_EVENT_DATA__Anonymous_e__Union__leafsetKeyChange_e__Struct
 ?change dd ? ; offset 0, DRT_LEAFSET_KEY_CHANGE_TYPE
 db 4 dup (?) ; padding to offset 8
 ?localKey DRT_DATA ; offset 8, DRT_DATA
 ?remoteKey DRT_DATA ; offset 24, DRT_DATA
-ends
-; struct _registrationStateChange_e__Struct (NetworkManagement.P2P), sizeof=24, align=8
-struct DRT_EVENT_DATA__Anonymous_e__Union__registrationStateChange_e__Struct
-?state dd ? ; offset 0, DRT_REGISTRATION_STATE
-db 4 dup (?) ; padding to offset 8
-?localKey DRT_DATA ; offset 8, DRT_DATA
 ends
 ; struct _statusChange_e__Struct (NetworkManagement.P2P), sizeof=24, align=8
 struct DRT_EVENT_DATA__Anonymous_e__Union__statusChange_e__Struct
@@ -86427,13 +86427,6 @@ struct IKEEXT_IPV6_CGA_AUTHENTICATION0
 ?cgaCollisionCount db ? ; offset 36, Byte
 db 3 dup (?) ; tail padding
 ends
-; union _Anonymous1_e__Union (NetworkManagement.WindowsFilteringPlatform), sizeof=16, align=4
-struct FWPM_NET_EVENT_HEADER0__Anonymous1_e__Union
-union
-?localAddrV4 dd ? ; UInt32
-?localAddrV6 FWP_BYTE_ARRAY16 ; FWP_BYTE_ARRAY16
-ends
-ends
 ; union _Anonymous2_e__Union (NetworkManagement.WindowsFilteringPlatform), sizeof=16, align=4
 struct FWPM_NET_EVENT_HEADER0__Anonymous2_e__Union
 union
@@ -86442,7 +86435,7 @@ union
 ends
 ends
 ; union _Anonymous1_e__Union (NetworkManagement.WindowsFilteringPlatform), sizeof=16, align=4
-struct FWPM_NET_EVENT_HEADER1__Anonymous1_e__Union
+struct FWPM_NET_EVENT_HEADER0__Anonymous1_e__Union
 union
 ?localAddrV4 dd ? ; UInt32
 ?localAddrV6 FWP_BYTE_ARRAY16 ; FWP_BYTE_ARRAY16
@@ -86456,7 +86449,7 @@ union
 ends
 ends
 ; union _Anonymous1_e__Union (NetworkManagement.WindowsFilteringPlatform), sizeof=16, align=4
-struct FWPM_NET_EVENT_HEADER2__Anonymous1_e__Union
+struct FWPM_NET_EVENT_HEADER1__Anonymous1_e__Union
 union
 ?localAddrV4 dd ? ; UInt32
 ?localAddrV6 FWP_BYTE_ARRAY16 ; FWP_BYTE_ARRAY16
@@ -86470,7 +86463,7 @@ union
 ends
 ends
 ; union _Anonymous1_e__Union (NetworkManagement.WindowsFilteringPlatform), sizeof=16, align=4
-struct FWPM_NET_EVENT_HEADER3__Anonymous1_e__Union
+struct FWPM_NET_EVENT_HEADER2__Anonymous1_e__Union
 union
 ?localAddrV4 dd ? ; UInt32
 ?localAddrV6 FWP_BYTE_ARRAY16 ; FWP_BYTE_ARRAY16
@@ -86481,6 +86474,13 @@ struct FWPM_NET_EVENT_HEADER3__Anonymous2_e__Union
 union
 ?remoteAddrV4 dd ? ; UInt32
 ?remoteAddrV6 FWP_BYTE_ARRAY16 ; FWP_BYTE_ARRAY16
+ends
+ends
+; union _Anonymous1_e__Union (NetworkManagement.WindowsFilteringPlatform), sizeof=16, align=4
+struct FWPM_NET_EVENT_HEADER3__Anonymous1_e__Union
+union
+?localAddrV4 dd ? ; UInt32
+?localAddrV6 FWP_BYTE_ARRAY16 ; FWP_BYTE_ARRAY16
 ends
 ends
 ; struct IKEEXT_PRESHARED_KEY_AUTHENTICATION0 (NetworkManagement.WindowsFilteringPlatform), sizeof=16, align=8
@@ -89463,25 +89463,6 @@ union
 ?Enumeration PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS__Anonymous_e__Union__Enumeration_e__Struct ; _Enumeration_e__Struct
 ends
 ends
-; struct _Version3_e__Struct (Storage.Vhd), sizeof=152, align=8
-struct CREATE_VIRTUAL_DISK_PARAMETERS__Anonymous_e__Union__Version3_e__Struct
-?UniqueId WIN32JSON_GUID ; offset 0, Guid
-?MaximumSize dq ? ; offset 16, UInt64
-?BlockSizeInBytes dd ? ; offset 24, UInt32
-?SectorSizeInBytes dd ? ; offset 28, UInt32
-?PhysicalSectorSizeInBytes dd ? ; offset 32, UInt32
-db 4 dup (?) ; padding to offset 40
-?ParentPath dq ? ; offset 40, pointer
-?SourcePath dq ? ; offset 48, pointer
-?OpenFlags dd ? ; offset 56, OPEN_VIRTUAL_DISK_FLAG
-?ParentVirtualStorageType VIRTUAL_STORAGE_TYPE ; offset 60, VIRTUAL_STORAGE_TYPE
-?SourceVirtualStorageType VIRTUAL_STORAGE_TYPE ; offset 80, VIRTUAL_STORAGE_TYPE
-?ResiliencyGuid WIN32JSON_GUID ; offset 100, Guid
-db 4 dup (?) ; padding to offset 120
-?SourceLimitPath dq ? ; offset 120, pointer
-?BackingStorageType VIRTUAL_STORAGE_TYPE ; offset 128, VIRTUAL_STORAGE_TYPE
-db 4 dup (?) ; tail padding
-ends
 ; struct _Version4_e__Struct (Storage.Vhd), sizeof=176, align=8
 struct CREATE_VIRTUAL_DISK_PARAMETERS__Anonymous_e__Union__Version4_e__Struct
 ?UniqueId WIN32JSON_GUID ; offset 0, Guid
@@ -89502,6 +89483,25 @@ db 4 dup (?) ; padding to offset 120
 ?PmemAddressAbstractionType WIN32JSON_GUID ; offset 148, Guid
 db 4 dup (?) ; padding to offset 168
 ?DataAlignment dq ? ; offset 168, UInt64
+ends
+; struct _Version3_e__Struct (Storage.Vhd), sizeof=152, align=8
+struct CREATE_VIRTUAL_DISK_PARAMETERS__Anonymous_e__Union__Version3_e__Struct
+?UniqueId WIN32JSON_GUID ; offset 0, Guid
+?MaximumSize dq ? ; offset 16, UInt64
+?BlockSizeInBytes dd ? ; offset 24, UInt32
+?SectorSizeInBytes dd ? ; offset 28, UInt32
+?PhysicalSectorSizeInBytes dd ? ; offset 32, UInt32
+db 4 dup (?) ; padding to offset 40
+?ParentPath dq ? ; offset 40, pointer
+?SourcePath dq ? ; offset 48, pointer
+?OpenFlags dd ? ; offset 56, OPEN_VIRTUAL_DISK_FLAG
+?ParentVirtualStorageType VIRTUAL_STORAGE_TYPE ; offset 60, VIRTUAL_STORAGE_TYPE
+?SourceVirtualStorageType VIRTUAL_STORAGE_TYPE ; offset 80, VIRTUAL_STORAGE_TYPE
+?ResiliencyGuid WIN32JSON_GUID ; offset 100, Guid
+db 4 dup (?) ; padding to offset 120
+?SourceLimitPath dq ? ; offset 120, pointer
+?BackingStorageType VIRTUAL_STORAGE_TYPE ; offset 128, VIRTUAL_STORAGE_TYPE
+db 4 dup (?) ; tail padding
 ends
 ; struct _Version2_e__Struct (Storage.Vhd), sizeof=120, align=8
 struct CREATE_VIRTUAL_DISK_PARAMETERS__Anonymous_e__Union__Version2_e__Struct
@@ -90840,15 +90840,15 @@ struct MINIDUMP_EXCEPTION_STREAM
 ?ExceptionRecord MINIDUMP_EXCEPTION ; offset 8, MINIDUMP_EXCEPTION
 ?ThreadContext MINIDUMP_LOCATION_DESCRIPTOR ; offset 160, MINIDUMP_LOCATION_DESCRIPTOR
 ends
-; struct _Anonymous3_e__Struct (System.Diagnostics.Debug), sizeof=52, align=4
-struct MINIDUMP_CALLBACK_OUTPUT__Anonymous_e__Union__Anonymous3_e__Struct
-?VmRegion MINIDUMP_MEMORY_INFO ; offset 0, MINIDUMP_MEMORY_INFO
-?Continue dd ? ; offset 48, Int32
-ends
 ; struct _Anonymous4_e__Struct (System.Diagnostics.Debug), sizeof=52, align=4
 struct MINIDUMP_CALLBACK_OUTPUT__Anonymous_e__Union__Anonymous4_e__Struct
 ?VmQueryStatus dd ? ; offset 0, Int32
 ?VmQueryResult MINIDUMP_MEMORY_INFO ; offset 4, MINIDUMP_MEMORY_INFO
+ends
+; struct _Anonymous3_e__Struct (System.Diagnostics.Debug), sizeof=52, align=4
+struct MINIDUMP_CALLBACK_OUTPUT__Anonymous_e__Union__Anonymous3_e__Struct
+?VmRegion MINIDUMP_MEMORY_INFO ; offset 0, MINIDUMP_MEMORY_INFO
+?Continue dd ? ; offset 48, Int32
 ends
 ; struct MINIDUMP_THREAD_NAME_LIST (System.Diagnostics.Debug), sizeof=16, align=4
 struct MINIDUMP_THREAD_NAME_LIST
@@ -97940,11 +97940,6 @@ db 4 dup (?) ; padding to offset 8
 ?RequiredFileOffset LARGE_INTEGER ; offset 8, LARGE_INTEGER
 ?RequiredLength LARGE_INTEGER ; offset 16, LARGE_INTEGER
 ends
-; struct _FetchData_e__Struct (Storage.CloudFilters), sizeof=16, align=8
-struct CF_CALLBACK_PARAMETERS__Anonymous_e__Union__Cancel_e__Struct__Anonymous_e__Union__FetchData_e__Struct
-?FileOffset LARGE_INTEGER ; offset 0, LARGE_INTEGER
-?Length LARGE_INTEGER ; offset 8, LARGE_INTEGER
-ends
 ; struct _FetchData_e__Struct (Storage.CloudFilters), sizeof=56, align=8
 struct CF_CALLBACK_PARAMETERS__Anonymous_e__Union__FetchData_e__Struct
 ?Flags dd ? ; offset 0, CF_CALLBACK_FETCH_DATA_FLAGS
@@ -97957,6 +97952,11 @@ db 4 dup (?) ; padding to offset 8
 ?LastDehydrationReason dd ? ; offset 48, CF_CALLBACK_DEHYDRATION_REASON
 db 4 dup (?) ; tail padding
 ends
+; struct _FetchData_e__Struct (Storage.CloudFilters), sizeof=16, align=8
+struct CF_CALLBACK_PARAMETERS__Anonymous_e__Union__Cancel_e__Struct__Anonymous_e__Union__FetchData_e__Struct
+?FileOffset LARGE_INTEGER ; offset 0, LARGE_INTEGER
+?Length LARGE_INTEGER ; offset 8, LARGE_INTEGER
+ends
 ; struct CF_OPERATION_INFO (Storage.CloudFilters), sizeof=48, align=8
 struct CF_OPERATION_INFO
 ?StructSize dd ? ; offset 0, UInt32
@@ -97967,6 +97967,22 @@ struct CF_OPERATION_INFO
 ?SyncStatus dq ? ; offset 32, pointer
 ?RequestKey LARGE_INTEGER ; offset 40, LARGE_INTEGER
 ends
+; struct _TransferPlaceholders_e__Struct (Storage.CloudFilters), sizeof=32, align=8
+struct CF_OPERATION_PARAMETERS__Anonymous_e__Union__TransferPlaceholders_e__Struct
+?Flags dd ? ; offset 0, CF_OPERATION_TRANSFER_PLACEHOLDERS_FLAGS
+?CompletionStatus dd ? ; offset 4, Int32
+?PlaceholderTotalCount LARGE_INTEGER ; offset 8, LARGE_INTEGER
+?PlaceholderArray dq ? ; offset 16, pointer
+?PlaceholderCount dd ? ; offset 24, UInt32
+?EntriesProcessed dd ? ; offset 28, UInt32
+ends
+; struct _AckData_e__Struct (Storage.CloudFilters), sizeof=24, align=8
+struct CF_OPERATION_PARAMETERS__Anonymous_e__Union__AckData_e__Struct
+?Flags dd ? ; offset 0, CF_OPERATION_ACK_DATA_FLAGS
+?CompletionStatus dd ? ; offset 4, Int32
+?Offset LARGE_INTEGER ; offset 8, LARGE_INTEGER
+?Length LARGE_INTEGER ; offset 16, LARGE_INTEGER
+ends
 ; struct _RetrieveData_e__Struct (Storage.CloudFilters), sizeof=40, align=8
 struct CF_OPERATION_PARAMETERS__Anonymous_e__Union__RetrieveData_e__Struct
 ?Flags dd ? ; offset 0, CF_OPERATION_RETRIEVE_DATA_FLAGS
@@ -97976,13 +97992,6 @@ db 4 dup (?) ; padding to offset 8
 ?Length LARGE_INTEGER ; offset 24, LARGE_INTEGER
 ?ReturnedLength LARGE_INTEGER ; offset 32, LARGE_INTEGER
 ends
-; struct _AckData_e__Struct (Storage.CloudFilters), sizeof=24, align=8
-struct CF_OPERATION_PARAMETERS__Anonymous_e__Union__AckData_e__Struct
-?Flags dd ? ; offset 0, CF_OPERATION_ACK_DATA_FLAGS
-?CompletionStatus dd ? ; offset 4, Int32
-?Offset LARGE_INTEGER ; offset 8, LARGE_INTEGER
-?Length LARGE_INTEGER ; offset 16, LARGE_INTEGER
-ends
 ; struct _TransferData_e__Struct (Storage.CloudFilters), sizeof=32, align=8
 struct CF_OPERATION_PARAMETERS__Anonymous_e__Union__TransferData_e__Struct
 ?Flags dd ? ; offset 0, CF_OPERATION_TRANSFER_DATA_FLAGS
@@ -97990,15 +97999,6 @@ struct CF_OPERATION_PARAMETERS__Anonymous_e__Union__TransferData_e__Struct
 ?Buffer dq ? ; offset 8, pointer
 ?Offset LARGE_INTEGER ; offset 16, LARGE_INTEGER
 ?Length LARGE_INTEGER ; offset 24, LARGE_INTEGER
-ends
-; struct _TransferPlaceholders_e__Struct (Storage.CloudFilters), sizeof=32, align=8
-struct CF_OPERATION_PARAMETERS__Anonymous_e__Union__TransferPlaceholders_e__Struct
-?Flags dd ? ; offset 0, CF_OPERATION_TRANSFER_PLACEHOLDERS_FLAGS
-?CompletionStatus dd ? ; offset 4, Int32
-?PlaceholderTotalCount LARGE_INTEGER ; offset 8, LARGE_INTEGER
-?PlaceholderArray dq ? ; offset 16, pointer
-?PlaceholderCount dd ? ; offset 24, UInt32
-?EntriesProcessed dd ? ; offset 28, UInt32
 ends
 ; struct CF_FILE_RANGE (Storage.CloudFilters), sizeof=16, align=8
 struct CF_FILE_RANGE
@@ -99311,27 +99311,17 @@ union
 ?arbitrary AsnOctetString ; AsnOctetString
 ends
 ends
-; struct _ChunkFinished_e__Struct (Storage.FileSystem), sizeof=72, align=8
-struct COPYFILE2_MESSAGE__Info_e__Union__ChunkFinished_e__Struct
-?dwStreamNumber dd ? ; offset 0, UInt32
-?dwFlags dd ? ; offset 4, UInt32
-?hSourceFile dq ? ; offset 8, pointer
-?hDestinationFile dq ? ; offset 16, pointer
-?uliChunkNumber ULARGE_INTEGER ; offset 24, ULARGE_INTEGER
-?uliChunkSize ULARGE_INTEGER ; offset 32, ULARGE_INTEGER
-?uliStreamSize ULARGE_INTEGER ; offset 40, ULARGE_INTEGER
-?uliStreamBytesTransferred ULARGE_INTEGER ; offset 48, ULARGE_INTEGER
-?uliTotalFileSize ULARGE_INTEGER ; offset 56, ULARGE_INTEGER
-?uliTotalBytesTransferred ULARGE_INTEGER ; offset 64, ULARGE_INTEGER
-ends
-; struct _StreamStarted_e__Struct (Storage.FileSystem), sizeof=40, align=8
-struct COPYFILE2_MESSAGE__Info_e__Union__StreamStarted_e__Struct
-?dwStreamNumber dd ? ; offset 0, UInt32
-?dwReserved dd ? ; offset 4, UInt32
-?hSourceFile dq ? ; offset 8, pointer
-?hDestinationFile dq ? ; offset 16, pointer
+; struct _Error_e__Struct (Storage.FileSystem), sizeof=56, align=8
+struct COPYFILE2_MESSAGE__Info_e__Union__Error_e__Struct
+?CopyPhase dd ? ; offset 0, COPYFILE2_COPY_PHASE
+?dwStreamNumber dd ? ; offset 4, UInt32
+?hrFailure dd ? ; offset 8, Int32
+?dwReserved dd ? ; offset 12, UInt32
+?uliChunkNumber ULARGE_INTEGER ; offset 16, ULARGE_INTEGER
 ?uliStreamSize ULARGE_INTEGER ; offset 24, ULARGE_INTEGER
-?uliTotalFileSize ULARGE_INTEGER ; offset 32, ULARGE_INTEGER
+?uliStreamBytesTransferred ULARGE_INTEGER ; offset 32, ULARGE_INTEGER
+?uliTotalFileSize ULARGE_INTEGER ; offset 40, ULARGE_INTEGER
+?uliTotalBytesTransferred ULARGE_INTEGER ; offset 48, ULARGE_INTEGER
 ends
 ; struct _StreamFinished_e__Struct (Storage.FileSystem), sizeof=56, align=8
 struct COPYFILE2_MESSAGE__Info_e__Union__StreamFinished_e__Struct
@@ -99344,17 +99334,27 @@ struct COPYFILE2_MESSAGE__Info_e__Union__StreamFinished_e__Struct
 ?uliTotalFileSize ULARGE_INTEGER ; offset 40, ULARGE_INTEGER
 ?uliTotalBytesTransferred ULARGE_INTEGER ; offset 48, ULARGE_INTEGER
 ends
-; struct _Error_e__Struct (Storage.FileSystem), sizeof=56, align=8
-struct COPYFILE2_MESSAGE__Info_e__Union__Error_e__Struct
-?CopyPhase dd ? ; offset 0, COPYFILE2_COPY_PHASE
-?dwStreamNumber dd ? ; offset 4, UInt32
-?hrFailure dd ? ; offset 8, Int32
-?dwReserved dd ? ; offset 12, UInt32
-?uliChunkNumber ULARGE_INTEGER ; offset 16, ULARGE_INTEGER
+; struct _StreamStarted_e__Struct (Storage.FileSystem), sizeof=40, align=8
+struct COPYFILE2_MESSAGE__Info_e__Union__StreamStarted_e__Struct
+?dwStreamNumber dd ? ; offset 0, UInt32
+?dwReserved dd ? ; offset 4, UInt32
+?hSourceFile dq ? ; offset 8, pointer
+?hDestinationFile dq ? ; offset 16, pointer
 ?uliStreamSize ULARGE_INTEGER ; offset 24, ULARGE_INTEGER
-?uliStreamBytesTransferred ULARGE_INTEGER ; offset 32, ULARGE_INTEGER
-?uliTotalFileSize ULARGE_INTEGER ; offset 40, ULARGE_INTEGER
-?uliTotalBytesTransferred ULARGE_INTEGER ; offset 48, ULARGE_INTEGER
+?uliTotalFileSize ULARGE_INTEGER ; offset 32, ULARGE_INTEGER
+ends
+; struct _ChunkFinished_e__Struct (Storage.FileSystem), sizeof=72, align=8
+struct COPYFILE2_MESSAGE__Info_e__Union__ChunkFinished_e__Struct
+?dwStreamNumber dd ? ; offset 0, UInt32
+?dwFlags dd ? ; offset 4, UInt32
+?hSourceFile dq ? ; offset 8, pointer
+?hDestinationFile dq ? ; offset 16, pointer
+?uliChunkNumber ULARGE_INTEGER ; offset 24, ULARGE_INTEGER
+?uliChunkSize ULARGE_INTEGER ; offset 32, ULARGE_INTEGER
+?uliStreamSize ULARGE_INTEGER ; offset 40, ULARGE_INTEGER
+?uliStreamBytesTransferred ULARGE_INTEGER ; offset 48, ULARGE_INTEGER
+?uliTotalFileSize ULARGE_INTEGER ; offset 56, ULARGE_INTEGER
+?uliTotalBytesTransferred ULARGE_INTEGER ; offset 64, ULARGE_INTEGER
 ends
 ; struct _ChunkStarted_e__Struct (Storage.FileSystem), sizeof=56, align=8
 struct COPYFILE2_MESSAGE__Info_e__Union__ChunkStarted_e__Struct
@@ -103403,16 +103403,16 @@ union
 ?localSubNet FWP_CONDITION_VALUE0 ; FWP_CONDITION_VALUE0
 ends
 ends
-; union _Anonymous1_e__Union (NetworkManagement.WindowsFilteringPlatform), sizeof=16, align=8
-struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE1___Anonymous1_e__Union
-union
-?localSubNet FWP_CONDITION_VALUE0 ; FWP_CONDITION_VALUE0
-ends
-ends
 ; union _Anonymous2_e__Union (NetworkManagement.WindowsFilteringPlatform), sizeof=16, align=8
 struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE1___Anonymous2_e__Union
 union
 ?remoteSubNet FWP_CONDITION_VALUE0 ; FWP_CONDITION_VALUE0
+ends
+ends
+; union _Anonymous1_e__Union (NetworkManagement.WindowsFilteringPlatform), sizeof=16, align=8
+struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE1___Anonymous1_e__Union
+union
+?localSubNet FWP_CONDITION_VALUE0 ; FWP_CONDITION_VALUE0
 ends
 ends
 ; struct IKEEXT_CERTIFICATE_AUTHENTICATION0 (NetworkManagement.WindowsFilteringPlatform), sizeof=56, align=8
@@ -107165,6 +107165,41 @@ struct WINBIO_PROTECTION_POLICY
 ?PolicySize dq ? ; offset 104, pointer
 ?Policy db 128 dup (?) ; offset 112, 128 x Byte
 ends
+; struct _IdentifyAndReleaseTicket_e__Struct (Devices.BiometricFramework), sizeof=96, align=8
+struct WINBIO_ASYNC_RESULT__Parameters_e__Union__IdentifyAndReleaseTicket_e__Struct
+?Identity WINBIO_IDENTITY ; offset 0, WINBIO_IDENTITY
+?SubFactor db ? ; offset 76, Byte
+db 3 dup (?) ; padding to offset 80
+?RejectDetail dd ? ; offset 80, UInt32
+db 4 dup (?) ; padding to offset 88
+?Ticket dq ? ; offset 88, UInt64
+ends
+; struct _SetProperty_e__Struct (Devices.BiometricFramework), sizeof=104, align=8
+struct WINBIO_ASYNC_RESULT__Parameters_e__Union__SetProperty_e__Struct
+?PropertyType dd ? ; offset 0, UInt32
+?PropertyId dd ? ; offset 4, UInt32
+?Identity WINBIO_IDENTITY ; offset 8, WINBIO_IDENTITY
+?SubFactor db ? ; offset 84, Byte
+db 3 dup (?) ; padding to offset 88
+?PropertyBufferSize dq ? ; offset 88, pointer
+?PropertyBuffer dq ? ; offset 96, pointer
+ends
+; struct _GetProperty_e__Struct (Devices.BiometricFramework), sizeof=104, align=8
+struct WINBIO_ASYNC_RESULT__Parameters_e__Union__GetProperty_e__Struct
+?PropertyType dd ? ; offset 0, UInt32
+?PropertyId dd ? ; offset 4, UInt32
+?Identity WINBIO_IDENTITY ; offset 8, WINBIO_IDENTITY
+?SubFactor db ? ; offset 84, Byte
+db 3 dup (?) ; padding to offset 88
+?PropertyBufferSize dq ? ; offset 88, pointer
+?PropertyBuffer dq ? ; offset 96, pointer
+ends
+; struct _DeleteTemplate_e__Struct (Devices.BiometricFramework), sizeof=80, align=4
+struct WINBIO_ASYNC_RESULT__Parameters_e__Union__DeleteTemplate_e__Struct
+?Identity WINBIO_IDENTITY ; offset 0, WINBIO_IDENTITY
+?SubFactor db ? ; offset 76, Byte
+db 3 dup (?) ; tail padding
+ends
 ; struct _EnumEnrollments_e__Struct (Devices.BiometricFramework), sizeof=96, align=8
 struct WINBIO_ASYNC_RESULT__Parameters_e__Union__EnumEnrollments_e__Struct
 ?Identity WINBIO_IDENTITY ; offset 0, WINBIO_IDENTITY
@@ -107184,41 +107219,6 @@ struct WINBIO_ASYNC_RESULT__Parameters_e__Union__Identify_e__Struct
 ?SubFactor db ? ; offset 76, Byte
 db 3 dup (?) ; padding to offset 80
 ?RejectDetail dd ? ; offset 80, UInt32
-ends
-; struct _DeleteTemplate_e__Struct (Devices.BiometricFramework), sizeof=80, align=4
-struct WINBIO_ASYNC_RESULT__Parameters_e__Union__DeleteTemplate_e__Struct
-?Identity WINBIO_IDENTITY ; offset 0, WINBIO_IDENTITY
-?SubFactor db ? ; offset 76, Byte
-db 3 dup (?) ; tail padding
-ends
-; struct _GetProperty_e__Struct (Devices.BiometricFramework), sizeof=104, align=8
-struct WINBIO_ASYNC_RESULT__Parameters_e__Union__GetProperty_e__Struct
-?PropertyType dd ? ; offset 0, UInt32
-?PropertyId dd ? ; offset 4, UInt32
-?Identity WINBIO_IDENTITY ; offset 8, WINBIO_IDENTITY
-?SubFactor db ? ; offset 84, Byte
-db 3 dup (?) ; padding to offset 88
-?PropertyBufferSize dq ? ; offset 88, pointer
-?PropertyBuffer dq ? ; offset 96, pointer
-ends
-; struct _IdentifyAndReleaseTicket_e__Struct (Devices.BiometricFramework), sizeof=96, align=8
-struct WINBIO_ASYNC_RESULT__Parameters_e__Union__IdentifyAndReleaseTicket_e__Struct
-?Identity WINBIO_IDENTITY ; offset 0, WINBIO_IDENTITY
-?SubFactor db ? ; offset 76, Byte
-db 3 dup (?) ; padding to offset 80
-?RejectDetail dd ? ; offset 80, UInt32
-db 4 dup (?) ; padding to offset 88
-?Ticket dq ? ; offset 88, UInt64
-ends
-; struct _SetProperty_e__Struct (Devices.BiometricFramework), sizeof=104, align=8
-struct WINBIO_ASYNC_RESULT__Parameters_e__Union__SetProperty_e__Struct
-?PropertyType dd ? ; offset 0, UInt32
-?PropertyId dd ? ; offset 4, UInt32
-?Identity WINBIO_IDENTITY ; offset 8, WINBIO_IDENTITY
-?SubFactor db ? ; offset 84, Byte
-db 3 dup (?) ; padding to offset 88
-?PropertyBufferSize dq ? ; offset 88, pointer
-?PropertyBuffer dq ? ; offset 96, pointer
 ends
 ; struct WINBIO_EXTENDED_ENGINE_INFO (Devices.BiometricFramework), sizeof=36, align=4
 struct WINBIO_EXTENDED_ENGINE_INFO
@@ -108154,15 +108154,15 @@ ends
 struct KSCAMERA_EXTENDEDPROP_VALUE
 ?Value KSCAMERA_EXTENDEDPROP_VALUE__Value_e__Union ; offset 0, _Value_e__Union
 ends
-; struct _FromFileHandle_e__Struct (Networking.HttpServer), sizeof=24, align=8
-struct HTTP_DATA_CHUNK__Anonymous_e__Union__FromFileHandle_e__Struct
-?ByteRange HTTP_BYTE_RANGE ; offset 0, HTTP_BYTE_RANGE
-?FileHandle dq ? ; offset 16, pointer
-ends
 ; struct _FromFragmentCacheEx_e__Struct (Networking.HttpServer), sizeof=24, align=8
 struct HTTP_DATA_CHUNK__Anonymous_e__Union__FromFragmentCacheEx_e__Struct
 ?ByteRange HTTP_BYTE_RANGE ; offset 0, HTTP_BYTE_RANGE
 ?pFragmentName dq ? ; offset 16, pointer
+ends
+; struct _FromFileHandle_e__Struct (Networking.HttpServer), sizeof=24, align=8
+struct HTTP_DATA_CHUNK__Anonymous_e__Union__FromFileHandle_e__Struct
+?ByteRange HTTP_BYTE_RANGE ; offset 0, HTTP_BYTE_RANGE
+?FileHandle dq ? ; offset 16, pointer
 ends
 ; struct AsnAny (NetworkManagement.Snmp), sizeof=20, align=4
 struct AsnAny

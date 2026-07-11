@@ -4,6 +4,7 @@
 include 'equates/all.inc'
 include 'types/all.inc'
 include 'pcount/all.inc'
+; Formatter-safe selective records are available below types/selective/.
 
 ; Import tables are intentionally separate:
 ;   include 'imports/library.inc'

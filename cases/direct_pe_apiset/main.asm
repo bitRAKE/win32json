@@ -1,18 +1,13 @@
-; Direct PE64 assembly using an API-set contract and its public enum namespace.
+; Standard fasm2 projection: API-set pcounts and generated import tables.
 
-include 'dd.inc'
-include 'align.inc'
-include 'format.inc'
-include 'x86-2.inc'
-use AMD64
-
+include 'generated/fasm2/x64/equates/all.inc'
 format PE64 NX console 6.0
 entry start
 
 include 'macro/proc64.inc'
-include 'cases/fixed_call64.g'
-define win32.select.apisets api_ms_win_core_winrt_l1_1_0
-include 'generated/fasm2_calm/x64/windows.inc'
+include 'macro/import64.inc'
+include 'cases/pe_support.inc'
+include 'generated/fasm2/x64/pcount/api_ms_win_core_winrt_l1_1_0.inc'
 
 prologue@proc equ static_rsp_prologue
 epilogue@proc equ static_rsp_epilogue
@@ -20,11 +15,15 @@ close@proc equ static_rsp_close procname
 
 section '.text' code readable executable
 proc start
-	RoInitialize RO_INIT_MULTITHREADED
+	fastcall [RoInitialize],RO_INIT_MULTITHREADED
 	test eax,eax
 	js .done
-	RoUninitialize
+	fastcall [RoUninitialize]
 	xor eax,eax
 .done:
 	ret
 endp
+
+section '.idata' import data readable writeable
+include 'generated/fasm2/x64/imports/apisets_library.inc'
+include 'generated/fasm2/x64/imports/apisets.inc'

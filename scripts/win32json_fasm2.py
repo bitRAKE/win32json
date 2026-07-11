@@ -770,19 +770,24 @@ class Win32JsonModel:
                 dependents[dep].add(key)
 
         by_key = {decl.key: decl for decl in records}
-        ready = deque(sorted((key for key, degree in indegree.items() if degree == 0), key=lambda k: by_key[k].order))
+        source_order = {decl.key: index for index, decl in enumerate(records)}
+
+        def record_order(key: TypeKey) -> tuple[int, int]:
+            return by_key[key].order, source_order[key]
+
+        ready = deque(sorted((key for key, degree in indegree.items() if degree == 0), key=record_order))
         ordered_record_keys: list[TypeKey] = []
         while ready:
             key = ready.popleft()
             ordered_record_keys.append(key)
-            for dependent in sorted(dependents[key], key=lambda k: by_key[k].order):
+            for dependent in sorted(dependents[key], key=record_order):
                 indegree[dependent] -= 1
                 if indegree[dependent] == 0:
                     ready.append(dependent)
 
         if len(ordered_record_keys) != len(records):
             remaining = [key for key in record_keys if key not in set(ordered_record_keys)]
-            for key in sorted(remaining, key=lambda k: by_key[k].order):
+            for key in sorted(remaining, key=record_order):
                 self.stats.unresolved_refs[f"type-order-cycle:{by_key[key].api}:{by_key[key].name}"] += 1
                 ordered_record_keys.append(key)
 
@@ -1092,6 +1097,7 @@ class Fasm2Writer:
                 "include 'equates/all.inc'",
                 "include 'types/all.inc'",
                 "include 'pcount/all.inc'",
+                "; Formatter-safe selective records are available below types/selective/.",
                 "",
                 "; Import tables are intentionally separate:",
                 ";   include 'imports/library.inc'",
@@ -1169,6 +1175,19 @@ class Fasm2Writer:
                 lines.append(f"sizeof.{decl.emitted} = {size}")
 
         self._write_text(self.out_dir / "types" / "all.inc", lines)
+
+        # Application-facing slices avoid colliding with formatter-owned
+        # records when only a small set of API layouts is needed.
+        for api, name in (("Networking.WinSock", "WSAData"),):
+            decl = self.model.top_type_by_api_name[(api, name)]
+            api_path = sanitize_identifier(api).lower()
+            self._write_text(
+                self.out_dir / "types" / "selective" / api_path / f"{decl.emitted}.inc",
+                [
+                    *self.header(f"Selective type: {api}.{name}"),
+                    *self.render_record(decl),
+                ],
+            )
 
     def render_record(self, decl: TypeDecl) -> list[str]:
         record = self.model.record_layout(decl)
@@ -1424,6 +1443,7 @@ def verify_generated(
         out_dir / "win32json.inc",
         out_dir / "equates" / "all.inc",
         out_dir / "types" / "all.inc",
+        out_dir / "types" / "selective" / "networking_winsock" / "WSAData.inc",
         out_dir / "pcount" / "all.inc",
         out_dir / "imports" / "library.inc",
         out_dir / "imports" / "all.inc",
