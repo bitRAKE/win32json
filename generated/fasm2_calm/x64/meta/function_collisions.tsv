@@ -1,0 +1,3 @@
+set	function	dll	canonical	reason
+downlevel	GetDeviceID	DSOUND.dll	win32.api.dsound.GetDeviceID	duplicate function name in selected set
+downlevel	GetDeviceID	tbs.dll	win32.api.tbs.GetDeviceID	duplicate function name in selected set

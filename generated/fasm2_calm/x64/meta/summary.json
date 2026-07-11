@@ -1,0 +1,12 @@
+{
+  "apiset_functions": 260,
+  "arch": "x64",
+  "downlevel_functions": 16823,
+  "duplicate_function_names": [
+    "GetDeviceID"
+  ],
+  "functions": 17083,
+  "public_apisets": 260,
+  "public_downlevel": 16821,
+  "withheld_public_aliases": 2
+}
