@@ -20,23 +20,20 @@ SKIP_DIRS = {"equates", "api", "pcount"}
 def candidate_names(api_dir: Path) -> set[str]:
     names: set[str] = set()
 
-    def walk_fields(item: dict) -> None:
-        for field in item.get("Fields") or []:
-            names.add(field["Name"])
+    def walk_decl(item: dict) -> None:
+        names.add(item["Name"])
+        for member_kind in ("Fields", "Values", "Methods"):
+            for member in item.get(member_kind) or []:
+                names.add(member["Name"])
         for nested in item.get("NestedTypes") or []:
-            walk_fields(nested)
+            walk_decl(nested)
 
     for path in sorted(api_dir.glob("*.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
         for constant in data.get("Constants") or []:
             names.add(constant["Name"])
         for decl in data.get("Types") or []:
-            names.add(decl["Name"])
-            walk_fields(decl)
-            for value in decl.get("Values") or []:
-                names.add(value["Name"])
-            for method in decl.get("Methods") or []:
-                names.add(method["Name"])
+            walk_decl(decl)
         for function in data.get("Functions") or []:
             names.add(function["Name"])
     return names
