@@ -1064,7 +1064,10 @@ class Fasm2Writer:
 
     def write(self, clean: bool = False) -> None:
         if clean and self.out_dir.exists():
-            shutil.rmtree(self.out_dir)
+            resolved = self.out_dir.resolve()
+            if resolved.name not in ARCH_TAGS:
+                raise SystemExit(f"refusing to clean unexpected output directory: {resolved}")
+            shutil.rmtree(resolved)
         self.out_dir.mkdir(parents=True, exist_ok=True)
         for sub in ("equates", "types", "pcount", "imports", "data", "meta"):
             (self.out_dir / sub).mkdir(parents=True, exist_ok=True)
