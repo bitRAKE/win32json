@@ -146,7 +146,7 @@ def align_up(value: int, alignment: int) -> int:
 # in definition / ?-prefixed definition / expression-reference / struct-field
 # contexts). Three classes emerged:
 #
-# 1. Line-start interception (directives, instructions, macros: Match, Add,
+# 1. Line-start interception (directives, mnemonics, macros: Match, Add,
 #    Format, fScale, ...). Harmless when the definition is written with the
 #    fasmg `?` prefix (`?Match = 0Fh`), which forces symbol interpretation;
 #    bare references and dotted field access then work with the original
@@ -206,7 +206,7 @@ RENAME_CASELESS = _register_family() | frozenset(
 
 # Class-1 exact spellings (verdict "qpfx"): fine for ?-prefixed constants,
 # but as a STRUCT NAME they would shadow the intercepting directive, macro,
-# or instruction, so type declarations rename these too.
+# or mnemonic, so type declarations rename these too.
 LINESTART_EXACT = frozenset(
     "Add add bitmap Break Call CpuId cursor du dw DW Enter err file File"
     " Format frame Frame fScale icon Import In Inc Int Invoke Label Leave"
@@ -378,7 +378,10 @@ class Win32JsonModel:
         self._com_method_cache: dict[TypeKey, list[str]] = {}
 
     def load(self) -> None:
-        files = sorted(self.api_dir.glob("*.json"))
+        files = sorted(
+            self.api_dir.glob("*.json"),
+            key=lambda path: (path.name.casefold(), path.name),
+        )
         self.stats.json_files = len(files)
         order = 0
         for path in files:
